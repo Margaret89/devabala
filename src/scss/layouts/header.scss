@@ -1,0 +1,43 @@
+.header{
+	display: flex;
+	align-items: center;
+	height: 88px;
+	position: relative;
+	z-index: 1000;
+
+	&__logo{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		font-size: 26.6px;
+		font-weight: 800;
+		color: var(--color-dark);
+		text-align: center;
+		text-transform: uppercase;
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.header-actions{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 40px;
+	height: 100%;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 32px;
+		height: 32px;
+
+		.icon{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+}

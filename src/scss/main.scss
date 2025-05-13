@@ -1,6 +1,14 @@
+@import "utils/vars";
+
+// bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
+
+// @import "components/loader";
+// @import "components/progress";
 
 
 @import "layouts/main";
@@ -9,3 +17,5 @@
 
 @import "components/icons";
 @import "components/type-icon";
+@import "components/main-menu";
+@import "components/burger";

@@ -1,1 +1,70 @@
 footer.footer
+	.footer__top
+		.container
+			.row
+				.col-8
+					.footer-menu-wrap
+						.footer-menu-wrap__link
+							a(href="#") Каталог
+						
+						.footer-menu
+							-
+								var list=[
+									{text:'все'},
+									{text:'платья'},
+									{text:'топы'},
+									{text:'брюки'},
+									{text:'жакеты'},
+									{text:'корсеты'},
+									{text:'блузки'},
+									{text:'жилеты'},
+								]
+							each item in list
+								.footer-menu__item
+									a(href="#")= item.text
+
+						.footer-menu
+							-
+								var list=[
+									{text:'вечерние образы'},
+									{text:'круизная коллекция', status:'true'},
+									{text:'На все случаи'},
+									{text:'весна 2025'},
+								]
+							each item in list
+								.footer-menu__item(class=item.status?'active':'')
+									a(href="#")= item.text
+
+				.col-4
+					.footer-menu
+						-
+							var list=[
+								{text:'о бренде'},
+								{text:'блог'},
+								{text:'контакты'},
+							]
+						each item in list
+							.footer-menu__item(class=item.status?'active':'')
+								a(href="#")= item.text
+
+					.social
+						a(href="#").social__item
+							+svg('ic-instagram','ic-instagram', '20', '20')
+
+						a(href="#").social__item
+							+svg('ic-youtube','ic-youtube', '22', '19')
+
+					.footer-contacts
+						.footer-contacts__item
+							a(href="mailto:support@devabala.ru") support@devabala.ru
+
+						.footer-contacts__item
+							a(href="tel:+79274568282") +7 (927) 456-82-82
+
+						.footer-contacts__item 08:00 - 18:00 - Ежедневно
+
+	.footer__bottom
+		.container
+			.row
+				.col-12
+					.footer__copyright Copyright© All Rights Reserved.

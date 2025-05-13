@@ -10,7 +10,114 @@ html(lang="ru")
 			title #{pages[pageId].title}
 		else
 			title ALMA
-	body
+
+		style.
+			@font-face {
+			font-family: 'Inter';
+			src: local('Inter Medium'), local('Inter-Medium'), url('fonts/inter/Inter-Medium.woff2') format('woff2'), url('fonts/inter/Inter-Medium.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-display: swap;
+			}
+			@font-face {
+			font-family: 'Tenor Sans';
+			src: local('Tenor Sans'), local('Tenor-Sans'), url('../fonts/tenorsans/tenor_sans.woff2') format('woff2'), url('../fonts/tenorsans/tenor_sans.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+			font-display: swap;
+			}
+			.loader{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 15px;
+			width: 100vw;
+			height: 100vh;
+			background: #9E906D;
+			color: #fff;
+			text-align: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10000;
+			}
+			.loader.hide{display: none;}
+			.loader__logo{
+			margin-bottom: 58px;
+			img{max-width: 80px;}
+			}
+			.loader__name{
+			font-family: 'Inter', Arial, sans-serif;
+			font-weight: 500;
+			font-size: 86px;
+			line-height: 1;
+			}
+			.loader__text{
+			font-family: 'Tenor Sans', Arial, sans-serif;
+			font-size: 1.6rem;
+			margin-top: 20px;
+			}
+
+			.progress{width: 100%;}
+
+			.progress__line-begin, .progress__line-last{
+			stroke: #FCF9EC;
+			stroke-opacity: 0.15;
+			stroke-width: 2;
+			}
+
+			.progress__line-color-begin, .progress__line-color-last{
+			stroke: #FCF9EC;
+			stroke-opacity: 1;
+			stroke-width: 2;
+			stroke-dasharray: 1000;
+			}
+
+			.progress__line-color-begin{
+			animation: dash-begin 2.5s linear alternate 1;
+			stroke-dashoffset: 0;
+			}
+
+			.progress__line-color-last{opacity: 0;}
+
+			.progress__line-color-last.active{
+			opacity: 1;
+			animation: dash-last 1s linear alternate 1;
+			stroke-dashoffset: 1000;
+			animation-fill-mode: forwards;
+			}
+
+			.progress__needle{fill:#FCF9EC;}
+
+			@keyframes dash-begin {
+			from{stroke-dashoffset: -922;}
+			to{stroke-dashoffset: 0;}
+			}
+
+			@keyframes dash-last {
+			from{stroke-dashoffset: 922;}
+			to{stroke-dashoffset: 0;}
+			}
+
+	body.no-scroll.js-body
+		//- .loader.js-loader
+		//- 	.loader__content
+		//- 		.loader__logo
+		//- 			img(src="/upload/logo.svg", alt="logo")
+
+		//- 		.loader__name DEVABALA
+		//- 		.loader__text Женственность и сила в каждом образе
+
+			
+		//- 	svg.progress(viewbox='0 0 1280 242' fill='none' xmlns='http://www.w3.org/2000/svg')
+		//- 		path.progress__line-begin(d='M570 121.5C531 150 491.5 147 447 127C343.412 80.4434 283.5 36 165.5 54C47.5 72 41.5 120.5 -60.5 148')
+		//- 		path.progress__line-color-begin.js-progress-line-color-begin(d='M570 121.5C531 150 491.5 147 447 127C343.412 80.4434 283.5 36 165.5 54C47.5 72 41.5 120.5 -60.5 148')
+		//- 		path.progress__line-last(d='M573.5 117C581.167 105.833 605.035 83.2022 623.5 86C640 88.5 653 102 663 124.5C672.546 145.979 679 196 679 197.5C679 199 681 215 673 214.5C665 214 658.695 197.5 666 183C673.305 168.5 688.493 133.671 718 114C740.5 99 784.416 83.0071 830 80.5C930 75 962.1 132.5 1052.5 132.5C1142.9 132.5 1269.5 54.5 1284.5 1')
+		//- 		path.progress__line-color-last.js-progress-line-color-last(d='M573.5 117C581.167 105.833 605.035 83.2022 623.5 86C640 88.5 653 102 663 124.5C672.546 145.979 679 196 679 197.5C679 199 681 215 673 214.5C665 214 658.695 197.5 666 183C673.305 168.5 688.493 133.671 718 114C740.5 99 784.416 83.0071 830 80.5C930 75 962.1 132.5 1052.5 132.5C1142.9 132.5 1269.5 54.5 1284.5 1')
+		//- 		path.progress__needle(d='M571.126 104.262C568.954 102.281 562.306 104.301 561.568 108.721C561.193 110.963 562.398 116.016 564.609 124.08L568.085 121.603L567.651 120.612L567.216 119.126C565.478 113.18 565.478 111.199 568.085 110.208C570.692 109.217 571.127 111.694 572.865 118.135C574.603 124.576 575.472 130.025 572.865 131.512C570.779 132.701 569.533 128.374 568.954 126.062L565.913 128.539C568.353 137.189 571.474 148.192 574.602 159.752C582.515 188.991 591.113 216.232 598.5 241.5C593.286 209.296 588.545 184.739 583.292 157.77C578.087 131.047 575.186 107.966 571.126 104.262Z')
+
+
 		.wrapper
 			include ./_header
 			main

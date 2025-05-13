@@ -1,0 +1,53 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'main'
+	- var headerLight = 'true'
+
+
+block body
+	section.top-slider-wrap.mb-indent
+		.swiper.top-slider.js-top-slider
+			.swiper-wrapper
+				-
+					var list=[
+						{title:'Рефинансирование'},
+						{title:'Рефинансирование 2'},
+						{title:'Рефинансирование 3'},
+						{title:'Рефинансирование 4'},
+					]
+				each item in list
+					.swiper-slide.top-slider__item
+						.container
+							.row
+								.col-12
+						.top-slider__content
+							.top-slider__label Ипотечная программа
+
+							.top-slider__title= item.title
+
+							.top-slider__subtitle Сократите расходы по имеющимся обязательствам
+
+							.top-slider__text
+								ul.list-check
+									li Остаток задолженности по первоначальному кредиту - 
+										span.text-accent до 60%
+
+									li Сумма займа - 
+										span.text-accent от 300 000 руб.
+
+							a.btn(href="#") Узнать подробнее
+								+svg('ic-share','ic-share', '11', '12')
+
+						.top-slider__img
+							img(src="/upload/top-slide.jpg", alt="")
+				
+		.swiper-button-prev.js-top-slider-prev
+			+svg('ic-arrow-left','ic-arrow-left', '17', '30')
+
+		.swiper-button-next.js-top-slider-next
+			+svg('ic-arrow-right','ic-arrow-right', '17', '30')
+
+		.swiper-pagination.js-top-slider-pagination
+
+	

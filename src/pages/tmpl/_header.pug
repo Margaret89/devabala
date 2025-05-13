@@ -1,1 +1,81 @@
-header.header
+header.header(class=headerLight?'header__light':'')
+	.container
+		.row
+			.col-4
+				.main-menu-wrap
+					.main-menu-wrap__btn
+						+svg('ic-menu','ic-menu', '38', '30')
+
+					.main-menu-wrap__popup
+						.main-menu-wrap__close
+							.ic-hamburger.active.js-close-menu
+								span
+
+						.main-menu-wrap__content
+							.container
+								.row
+									.col-3
+										.main-menu-wrap__sect
+											.main-menu-wrap__title
+												a(href="#")  Каталог
+
+									.col-3
+										.main-menu-wrap__sect
+											.main-menu-wrap__title Категории
+
+											.main-menu
+												-
+													var list=[
+														{text:'все'},
+														{text:'платья'},
+														{text:'топы'},
+														{text:'брюки'},
+														{text:'жакеты'},
+														{text:'корсеты'},
+														{text:'блузки'},
+														{text:'жилеты'},
+													]
+												each item in list
+													.main-menu__item
+														a(href="#")= item.text
+
+									.col-6
+										.main-menu-wrap__sect
+											.main-menu-wrap__title Коллекции
+
+											.main-menu
+												-
+													var list=[
+														{text:'вечерние образы'},
+														{text:'круизная коллекция', status:'active'},
+														{text:'На все случаи'},
+														{text:'весна 2025'},
+													]
+												each item in list
+													.main-menu__item(class=item.status?'active':'')
+														a(href="#")= item.text
+
+						.menu-sect
+							.container
+								.row
+									-
+										var list=[
+											{text:'Круиз', img:'menu-sect1.jpg'},
+											{text:'Офис', img:'menu-sect2.jpg'},
+											{text:'Досуг', img:'menu-sect3.jpg'},
+											{text:'Весна 2025', img:'menu-sect4.jpg'},
+										]
+									each item in list
+										.col-3
+											a(href="#", style="background-image: url(/upload/"+item.img+")").menu-sect__item= item.text
+
+			.col-4
+				.header__logo DEVABALA
+
+			.col-4
+				.header-actions
+					.header-actions__item
+						+svg('ic-search','ic-search', '28', '28')
+
+					.header-actions__item
+						+svg('ic-bag','ic-bag', '24', '30')

@@ -1,3 +1,45 @@
+// Inter
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Regular'), local('Inter-Regular'),
+		url('../fonts/inter/Inter-Regular.woff2') format('woff2'),
+		url('../fonts/inter/Inter-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Italic'), local('Inter-Italic'),
+		url('../fonts/inter/Inter-Italic.woff2') format('woff2'),
+		url('../fonts/inter/Inter-Italic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Medium'), local('Inter-Medium'),
+		url('../fonts/inter/Inter-Medium.woff2') format('woff2'),
+		url('../fonts/inter/Inter-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter MediumItalic'), local('Inter-MediumItalic'),
+		url('../fonts/inter/Inter-MediumItalic.woff2') format('woff2'),
+		url('../fonts/inter/Inter-MediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+// Tenor Sans
 @font-face {
 	font-family: 'Tenor Sans';
 	src: local('Tenor Sans'), local('Tenor-Sans'),
