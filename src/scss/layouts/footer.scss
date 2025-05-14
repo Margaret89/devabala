@@ -1,0 +1,107 @@
+.footer{
+	background: var(--color-grey);
+
+	&__top{padding: 30px 0;}
+
+	&__bottom{
+		background: #A29C90;
+		padding: 15px 0;
+		color: #fff;
+	}
+
+	&__copyright{
+		font-family: var(--font-tenor);
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	.social{margin-top: 15px;}
+}
+
+.footer-menu-wrap{
+	display: flex;
+	gap: 103px;
+
+	&__link{
+		font-size: 1.2rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		color: var(--color-primary);
+		margin-right: -65px;
+
+		a{
+			color: var(--color-primary);
+			text-decoration: none;
+			transition: color 0.2s ease;
+
+			&:hover{color: var(--color-orange);}
+		}
+	}
+}
+
+.footer-menu{
+	&,
+	&__item{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&{margin-top: 6px;}
+
+	&__item{
+		font-family: var(--font-tenor);
+		font-size: 1.4rem;
+		line-height: 1.5;
+		color: var(--color-black);
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+
+		&:not(:last-child){margin-bottom: 1.1rem;}
+
+		a{
+			color: var(--color-black);
+			text-decoration: none;
+			margin-left: -18px;
+			transition: all 0.2s ease 0s;
+
+			&::before{
+				content: '';
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background: url(../img/design-star-orange.svg) no-repeat center;
+				margin-right: 8px;
+				transform: scaleX(0);
+				transition: transform 0.2s ease 0s;
+			}
+		}
+	}
+
+	&__item.active a,
+	&__item a:hover{
+		color: var(--color-orange);
+		margin-left: 0;
+	}
+	
+	&__item.active a::before,
+	&__item a:hover::before{
+		transform: scaleX(1);
+	}
+}
+
+.footer-contacts{
+	font-size: 1.6rem;
+	font-weight: 800;
+	line-height: 1.5;
+	color: var(--color-primary);
+	margin-top: 15px;
+
+	a{
+		color: var(--color-primary);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+
+		&:hover{color: var(--color-orange);}
+	}
+}

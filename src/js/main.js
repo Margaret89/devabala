@@ -35,3 +35,17 @@ if(document.querySelector('.js-loader')){
 		}
 	});
 }
+
+//Открыть меню
+if(document.querySelector('.js-main-menu-open')){
+	document.querySelector('.js-main-menu-open').addEventListener("click", function(e){
+		document.querySelector('.js-main-menu-wrap-popup').classList.add('active');
+	});
+}
+
+//Закрыть меню
+if(document.querySelector('.js-main-menu-close')){
+	document.querySelector('.js-main-menu-close').addEventListener("click", function(e){
+		document.querySelector('.js-main-menu-wrap-popup').classList.remove('active');
+	});
+}

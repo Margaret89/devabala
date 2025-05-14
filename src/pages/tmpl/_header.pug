@@ -3,12 +3,12 @@ header.header(class=headerLight?'header__light':'')
 		.row
 			.col-4
 				.main-menu-wrap
-					.main-menu-wrap__btn
+					.main-menu-wrap__btn.js-main-menu-open
 						+svg('ic-menu','ic-menu', '38', '30')
 
-					.main-menu-wrap__popup
+					.main-menu-wrap__popup.js-main-menu-wrap-popup
 						.main-menu-wrap__close
-							.ic-hamburger.active.js-close-menu
+							.ic-hamburger.active.js-main-menu-close
 								span
 
 						.main-menu-wrap__content
@@ -67,7 +67,8 @@ header.header(class=headerLight?'header__light':'')
 										]
 									each item in list
 										.col-3
-											a(href="#", style="background-image: url(/upload/"+item.img+")").menu-sect__item= item.text
+											a(href="#", style="background-image: url(/upload/"+item.img+")").menu-sect__item
+												.menu-sect__text= item.text
 
 			.col-4
 				.header__logo DEVABALA
