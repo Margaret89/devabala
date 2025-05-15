@@ -1,0 +1,87 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'catalog'
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Каталог'},
+		];
+
+block body
+	.page-top
+		.container
+			.row
+				.col-3
+					+breadcrumbs(breadcrumbs)
+
+				.col-9
+					ul.catalog-menu-main.catalog-menu-main_column
+						-
+							var list=[
+								{text:'все', status:'active'},
+								{text:'платья'},
+								{text:'брюки'},
+								{text:'топы'},
+								{text:'жакеты'},
+								{text:'корсеты'},
+								{text:'блузки'},
+								{text:'жилеты'},
+								{text:'жакеты'},
+								{text:'корсеты'},
+								{text:'блузки'},
+							]
+						each item in list
+							li.catalog-menu-main__item(class=item.status?'active':'')
+								a(href="#")= item.text
+
+	section.catalog-wrap
+		.container
+			.row
+				.col-12
+					.catalog-wrap__top
+						.filter-btn
+							span.filter-btn__label Фильтр
+
+							span.filter-btn__icon
+								+svg('ic-filter','ic-filter', '18', '9')
+
+						.view
+							.view__label Вид
+
+							.view__list
+								.view__item
+									+svg('ic-random','ic-random', '16', '16')
+
+								.view__item.active
+									+svg('ic-grid','ic-grid', '16', '16')
+
+								.view__item
+									+svg('ic-column','ic-column', '16', '16')
+
+		.catalog-list
+			.container
+				.row
+					-
+						var list=[
+							{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
+							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
+							{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+							{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+							{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+							{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+							{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
+							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
+						]
+					each item in list
+						.col-3
+							.catalog-item
+								a(href="#").catalog-item__img-wrap
+									.catalog-item__img
+										img(src="/upload/"+item.img, alt="")
+
+								.catalog-item__content
+									.catalog-item__title
+										a(href="#")= item.title
+
+									.catalog-item__price= item.price

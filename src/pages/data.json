@@ -4,6 +4,18 @@
 			"href": "main.html",
 			"title":"Главная"
 		},
+		"catalog-collection":{
+			"href": "catalog-collection.html",
+			"title":"Каталог по сетке"
+		},
+		"catalog":{
+			"href": "catalog.html",
+			"title":"Каталог"
+		},
+		"catalog-filter":{
+			"href": "catalog-filter.html",
+			"title":"Каталог с фильтром"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",
