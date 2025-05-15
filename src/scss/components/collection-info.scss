@@ -1,0 +1,31 @@
+/*-------------- collection-info -----------------*/
+.collection-info{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px 20px;
+
+	&__text{
+		font-size: 1.6rem;
+		font-weight: 800;
+		color: rgba(128, 121, 107, 0.7);
+		margin-top: 12px;
+	}
+
+	&__text:first-child{margin-top: 0;}
+
+	&__item{width: calc(25% - 15px);}
+	&__item_big{width: calc(50% - 13.33px);}
+
+	&__item_sb{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__item_end{
+		display: flex;
+		justify-content: flex-end;
+		gap: 10px;
+	}
+}

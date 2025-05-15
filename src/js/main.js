@@ -1,3 +1,10 @@
+//Swiper
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 // Лоадер
 const body = document.querySelector('.js-body');
 if(document.querySelector('.js-loader')){
@@ -48,4 +55,51 @@ if(document.querySelector('.js-main-menu-close')){
 	document.querySelector('.js-main-menu-close').addEventListener("click", function(e){
 		document.querySelector('.js-main-menu-wrap-popup').classList.remove('active');
 	});
+}
+
+// Верхний слайдер
+if(document.querySelector('.js-top-slider')){
+	const topSlider = new Swiper('.js-top-slider',
+	{
+		modules: [Pagination],
+		loop:true,
+		pagination:{
+			el:".js-top-slider-pagination",
+			clickable:true
+		},
+	});
+}
+
+// Слайдер категорий
+if(document.querySelector('.js-slider-sect-img')){
+	document.querySelectorAll('.js-slider-sect-img').forEach(function(sliderSect){
+		const numSlider = sliderSect.getAttribute('data-pager');
+
+		const sliderSectImg = new Swiper(sliderSect,
+			{
+				modules: [Pagination],
+				loop:true,
+				pagination:{
+					el:".js-slider-sect-img-pagination-"+numSlider,
+					clickable:true
+				},
+			});
+	});
+}
+
+//Изменяем ширину секции при наведении
+if(document.querySelector('.js-slider-sect-item')){
+	document.querySelectorAll('.js-slider-sect-item').forEach(function(section){
+		section.addEventListener('mouseover', () =>{
+			hoverSect(section)
+		});
+	});
+
+	function hoverSect(elem) {
+		document.querySelectorAll('.js-slider-sect-item').forEach(function(item){
+			item.classList.remove('active');
+		});
+
+		elem.classList.add('active');
+	}
 }

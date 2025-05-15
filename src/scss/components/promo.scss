@@ -1,0 +1,26 @@
+/*-------------- promo -----------------*/
+.promo{
+	display: flex;
+	align-items: center;
+	height: 858px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	&__content{text-align: center;}
+	&__logo{margin-bottom: 25px;}
+
+	&__title{
+		font-family: var(--font-tenor);
+		font-size: 6.4rem;
+		line-height: 1.125;
+		color: #fff;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+	}
+
+	.btn{
+		min-width: 332px;
+		margin-top: 40px;
+	}
+}

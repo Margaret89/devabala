@@ -1,0 +1,58 @@
+/*-------------- collection-about -----------------*/
+.collection-about-wrap{
+	background: #f6f5f3;
+	padding: 95px 0;	
+}
+
+.collection-about{
+	display: flex;
+	gap: 20px;
+
+	&__img{
+		flex-shrink: 0;
+		max-width: 100%;
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		justify-content: space-between;
+	}
+
+	&__top{
+		text-align: center;
+		padding-top: 30px;
+	}
+
+	&__logo{margin-bottom: 25px;}
+
+	&__title{
+		font-family: var(--font-tenor);
+		font-size: 6.4rem;
+		line-height: 1.125;
+		color: var(--color-grey-dark);
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+	}
+
+	&__main{
+		display: flex;
+		gap: 30px;
+	}
+
+	&__main-img{
+		flex-shrink: 0;
+		max-width: 50%;
+	}
+
+	&__text{
+		font-family: var(--font-tenor);
+		font-size: 1.6rem;
+		color: var(--color-grey-dark);
+	}
+
+	&__info{
+		.btn{margin-top: 30px;}
+	}
+}

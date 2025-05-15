@@ -1,0 +1,46 @@
+/*-------------- special-products -----------------*/
+.special-products-wrap{
+	&__title{
+		font-family: var(--font-tenor);
+		font-size: 6.4rem;
+		line-height: 1.125;
+		letter-spacing: 1.2px;
+		color: var(--color-dark);
+		text-transform: uppercase;
+		margin-bottom: 6.4rem;
+		padding-top: 6.6rem;
+		position: relative;
+
+		&::before{
+			content: '';
+			width: 215px;
+			height: 32px;
+			background: url(../img/wave.svg) no-repeat center;
+			background-size: contain;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&__img{margin-right: -80px;}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 40px;
+		height: 100%;
+		padding-top: 66px;
+	}
+
+	&__btn{margin-left: 60px;}
+}
+
+.special-products{
+	display: flex;
+	gap: 32px;
+	margin-right: -142px;
+	position: relative;
+	z-index: 2;
+}

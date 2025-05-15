@@ -18,6 +18,13 @@
 		position: relative;
 		z-index: 10;
 	}
+
+	&_light &__logo{color: #fff;}
+
+	&_light{
+		.main-menu-wrap__btn .icon{color: #fff;}
+		.header-actions__item .icon{color: #fff;}
+	}
 }
 
 .header-actions{

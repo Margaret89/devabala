@@ -1,0 +1,54 @@
+/*-------------- new-collection -----------------*/
+.new-collection{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+
+	&__item{
+		display: block;
+		width: calc(33.33% - 13.33px);
+		text-align: center;
+		text-decoration: none;
+	}
+
+	&__item:nth-child(2){margin-top: 260px;}
+	&__item:nth-child(3){margin-top: 40px;}
+
+	&__img{
+		position: relative;
+
+		img{width: 100%;}
+
+		&::after{
+			content: '';
+			display: block;
+			width: 32px;
+			height: 54px;
+			background: url(../img/pin.svg) no-repeat center;
+			background-size: contain;
+			position: absolute;
+			top: -20px;
+			right: 0;
+		}
+	}
+
+	&__title{
+		font-size: 1.6rem;
+		font-weight: 800;
+		color: var(--color-black);
+		margin-top: 6px;
+		position: relative;
+		padding: 0 30px;
+	}
+
+	&__arrow{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		transition: transform 0.2s ease 0s;
+
+		.icon{color: var(--color-orange);}
+	}
+
+	&__item:hover &__arrow{transform: translateX(10px);}
+}

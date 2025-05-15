@@ -1,4 +1,4 @@
-header.header(class=headerLight?'header__light':'')
+header.header(class=headerLight?'header_light':'')
 	.container
 		.row
 			.col-4
@@ -71,7 +71,8 @@ header.header(class=headerLight?'header__light':'')
 												.menu-sect__text= item.text
 
 			.col-4
-				.header__logo DEVABALA
+				if(pageId!='main')
+					.header__logo DEVABALA
 
 			.col-4
 				.header-actions
