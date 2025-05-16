@@ -236,6 +236,18 @@ button.btn{
 		.icon{color: var(--color-orange);}
 		&:hover .icon{transform: translateX(10px);}
 	}
+
+	&_border{
+		border-color: #DEDEDE;
+		background: transparent;
+		color: var(--color-black);
+
+		&:hover{
+			background-color: #000;
+			border-color: #000;
+			color: #fff;
+		}
+	}
 }
 
 .m-indent{
@@ -253,6 +265,8 @@ button.btn{
 
 .pt-indent{padding-top: var(--margin-indent);}
 .pb-indent{padding-bottom: var(--margin-indent);}
+
+.page-top{margin-bottom: 4rem;}
 
 .code{
 	background-color: #f7f7f7;

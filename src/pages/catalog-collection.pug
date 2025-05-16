@@ -41,12 +41,103 @@ block body
 		.container
 			.row
 				.col-12
+					.container
+			.row
+				.col-12
 					.catalog-wrap__top
-						.filter-btn
+						.filter-btn.js-filter-open
 							span.filter-btn__label Фильтр
 
 							span.filter-btn__icon
 								+svg('ic-filter','ic-filter', '18', '9')
+
+						.filter.js-filter
+							.filter__top
+								.filter__title фильтр
+
+								.filter__close.js-filter-close
+									.ic-hamburger.active
+										span
+
+							.filter__main
+								.filter__item.js-filter-item.opened
+									.filter__head.js-filter-head
+										.filter__label размер
+										.filter__arr
+											+svg('ic-arr-right','ic-arr-right', '9', '16')
+
+									.filter__content.js-filter-content
+										.filter__info.js-filter-info
+											.filter-check-list
+												-
+													var list=[
+														{text:'xs'},
+														{text:'s', status:'active'},
+														{text:'m'},
+														{text:'l'},
+													]
+												each item in list
+													label.filter-check
+														if(item.status)
+															input(type='checkbox', name="size", checked="checked")
+														else
+															input(type='checkbox', name="size")
+
+														span.filter-check__text= item.text
+
+								.filter__item.js-filter-item
+									.filter__head.js-filter-head
+										.filter__label цвет
+										.filter__arr
+											+svg('ic-arr-right','ic-arr-right', '9', '16')
+
+									.filter__content.js-filter-content
+										.filter__info.js-filter-info
+											.filter-circle-list
+												-
+													var list=[
+														{text:'Синий', color:'#0015FF'},
+														{text:'Зеленый', color:'#38C519', status:'active'},
+														{text:'Красный', color:'#FF1414'},
+													]
+												each item in list
+													label.filter-check-circle(class=item.status?'active':'')
+														if(item.status)
+															input(type='checkbox', name="color", checked="checked")
+														else
+															input(type='checkbox', name="color")
+
+														span.filter-check-circle__mark(style="background-color:"+item.color)
+														span.filter-check-circle__text= item.text
+
+								.filter__item.js-filter-item.opened
+									.filter__head.js-filter-head
+										.filter__label материал
+										.filter__arr
+											+svg('ic-arr-right','ic-arr-right', '9', '16')
+
+									.filter__content.js-filter-content
+										.filter__info.js-filter-info
+											.filter-circle-list
+												-
+													var list=[
+														{text:'Твид', img:'tvid.png'},
+														{text:'Органза', img:'organza.png', status:'active'},
+														{text:'Сатин', img:'satin.png'},
+													]
+												each item in list
+													label.filter-check-circle(class=item.status?'active':'')
+														if(item.status)
+															input(type='checkbox', name="material", checked="checked")
+														else
+															input(type='checkbox', name="material")
+
+														span.filter-check-circle__mark
+															img(src="/upload/"+item.img, alt="")
+														span.filter-check-circle__text= item.text
+
+							.filter__bottom
+								a(href="#").btn.btn_border очистить фильтр
 
 						.view
 							.view__label Вид
@@ -66,13 +157,73 @@ block body
 				.row
 					-
 						var list=[
+							{img:'catalog5.jpg', text:'Бархатный топ', price:'12 000'},
+							{img:'catalog5.jpg', text:'Бархатный топ', price:'12 000'},
+						]
+					each item in list
+						.col-6
+							.catalog-item
+								a(href="#").catalog-item__img-wrap
+									.catalog-item__img
+										img(src="/upload/"+item.img, alt="")
+
+								.catalog-item__content
+									.catalog-item__title
+										a(href="#")= item.text
+
+									.catalog-item__price= item.price
+
+				.row
+					.col-3
+						h4.catalog-list__title вечерние наряды
+					-
+						var list=[
 							{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
 							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
 							{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
-							{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+						]
+					each item in list
+						.col-3
+							.catalog-item
+								a(href="#").catalog-item__img-wrap
+									.catalog-item__img
+										img(src="/upload/"+item.img, alt="")
+
+								.catalog-item__content
+									.catalog-item__title
+										a(href="#")= item.text
+
+									.catalog-item__price= item.price
+
+				.row
+					-
+						var list=[
 							{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
 							{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
-							{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
+						]
+					each item in list
+						.col-3
+							.catalog-item
+								a(href="#").catalog-item__img-wrap
+									.catalog-item__img
+										img(src="/upload/"+item.img, alt="")
+
+								.catalog-item__content
+									.catalog-item__title
+										a(href="#")= item.text
+
+									.catalog-item__price= item.price
+
+					.col-3.offset-3
+						.catalog-list__desc It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
+
+				.row
+					.col-3
+						.catalog-list__desc.catalog-list__desc_center It is a long established fact that a reader will be distracted
+					-
+						var list=[
+							{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+							{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
 							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
 						]
 					each item in list
@@ -84,6 +235,6 @@ block body
 
 								.catalog-item__content
 									.catalog-item__title
-										a(href="#")= item.title
+										a(href="#")= item.text
 
 									.catalog-item__price= item.price

@@ -1,0 +1,56 @@
+/*-------------- catalog-menu-main -----------------*/
+.catalog-menu-main{
+	&,
+	&__item{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&:not(:last-child){margin-bottom: 2.5rem;}
+
+	&__item{
+		font-family: var(--font-tenor);
+		font-size: 1.8rem;
+		line-height: 1.33;
+		color: var(--color-black);
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+
+		&:not(:last-child){margin-bottom: 0.8rem;}
+
+		a{
+			color: var(--color-black);
+			text-decoration: none;
+			margin-left: -18px;
+			transition: all 0.2s ease 0s;
+
+			&::before{
+				content: '';
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background: url(../img/design-star-orange.svg) no-repeat center;
+				margin-right: 8px;
+				transform: scaleX(0);
+				transition: transform 0.2s ease 0s;
+			}
+		}
+	}
+
+	&__item.active a,
+	&__item a:hover{
+		color: var(--color-orange);
+		margin-left: 0;
+	}
+	
+	&__item.active a::before,
+	&__item a:hover::before{
+		transform: scaleX(1);
+	}
+
+	&_column{
+		column-count: 3;
+		gap: 20px;
+	}
+}

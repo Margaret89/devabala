@@ -103,3 +103,37 @@ if(document.querySelector('.js-slider-sect-item')){
 		elem.classList.add('active');
 	}
 }
+
+// Раскрывающийся блок фильтра
+if(document.querySelector('.js-filter-item')){
+	document.querySelectorAll('.js-filter-item').forEach((accSection) => {
+		const accHeader = accSection.querySelector('.js-filter-head');
+		const accBody = accSection.querySelector('.js-filter-content');
+		const accContent = accSection.querySelector('.js-filter-info');
+		
+		accHeader.addEventListener('click', () => {
+			accSection.classList.toggle("opened");
+			
+			if ( accSection.classList.contains("opened") ) {
+				accBody.style.maxHeight = `${accContent.clientHeight}px`;
+			} else {
+				accBody.style.maxHeight = "0px";
+			}
+		})
+	});
+}
+
+// Открыть фильтр
+if(document.querySelector('.js-filter-open')){
+	document.querySelector('.js-filter-open').addEventListener("click", function(e){
+		document.querySelector('.js-filter').classList.add('active');
+	});
+}
+
+// Закрыть фильтр
+if(document.querySelector('.js-filter-close')){
+	document.querySelector('.js-filter-close').addEventListener("click", function(e){
+		document.querySelector('.js-filter').classList.remove('active');
+	});
+}
+
