@@ -1,9 +1,28 @@
 //Swiper
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+//Fancybox
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+Fancybox.bind("[data-fancybox]", {
+	on: {
+		done: (fancybox, slide) => {
+			if(document.querySelector('.popup-window')){
+				document.querySelector('.popup-window').classList.remove('hide');
+			}
+		},
+		close: (fancybox, slide) => {
+			if(document.querySelector('.popup-window')){
+				document.querySelector('.popup-window').classList.add('hide');
+			}
+		}
+	}
+});
+
 
 // Лоадер
 const body = document.querySelector('.js-body');
@@ -136,4 +155,49 @@ if(document.querySelector('.js-filter-close')){
 		document.querySelector('.js-filter').classList.remove('active');
 	});
 }
+
+//Слайдер детального изображения каталога
+var prodDetailSliderThumb = new Swiper('.js-prod-detail-thumb-slider', {
+	modules: [Navigation],
+	slidesPerView: 5,
+	spaceBetween: 5,
+	freeMode: true,
+	watchSlidesProgress: true,
+	direction: "vertical",
+	navigation: {
+		nextEl: ".js-prod-detail-thumb-slider-next",
+		prevEl: ".js-prod-detail-thumb-slider-prev",
+	},
+	breakpoints: {
+		1280: {
+			spaceBetween: 10,
+		}
+	}
+	// loop: true,
+});
+var prodDetailSlider = new Swiper('.js-prod-detail-slider', {
+	modules: [Thumbs],
+	spaceBetween: 20,
+	// loop: true,
+	thumbs: {
+		swiper: prodDetailSliderThumb,
+	},
+});
+
+// Раскрывающийся блок
+document.querySelectorAll('.js-unwrap-block').forEach((accSection) => {
+	const accHeader = accSection.querySelector('.js-unwrap-head ');
+	const accBody = accSection.querySelector('.js-unwrap-content');
+	const accContent = accSection.querySelector('.js-unwrap-info');
+	
+	accHeader.addEventListener('click', () => {
+		accSection.classList.toggle("opened");
+		
+		if ( accSection.classList.contains("opened") ) {
+			accBody.style.maxHeight = `${accContent.clientHeight}px`;
+		} else {
+			accBody.style.maxHeight = "0px";
+		}
+	})
+});
 

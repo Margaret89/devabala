@@ -16,6 +16,10 @@
 			"href": "catalog-filter.html",
 			"title":"Каталог с фильтром"
 		},
+		"catalog-detail":{
+			"href": "catalog-detail.html",
+			"title":"Каталог детальная"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",
