@@ -1,0 +1,100 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'checkout-result'
+	-
+		var breadcrumbs=[
+			{href:'#',name:'корзина'},
+		];
+
+block body
+	.page-top
+		.container
+			.row
+				.col-12
+					+breadcrumbs(breadcrumbs)
+
+	section.basket-wrap
+		.container
+			.row
+				.col-12
+					.basket
+						-
+							var list=[
+								{img:'basket1.jpg', title:'Бархатный топ'},
+								{img:'basket2.jpg', title:'свитер'},
+							]
+						each item in list
+							.basket__item
+								.basket__img-wrap
+									.basket__img
+										img(src="/upload/"+item.img, alt="")
+
+								.basket__main
+									.basket__title
+										a(href="#")= item.title
+
+									.counter
+										.counter__toggle
+											+svg('ic-minus','ic-minus', '20', '3')
+
+										.counter__field
+											input(type="text", value="1")
+
+										.counter__toggle
+											+svg('ic-plus','ic-plus', '18', '18')
+
+								.basket__param
+									.basket__label Размер
+									
+									.basket__size m
+
+								.basket__param
+									.basket__label цвет
+
+									.basket__color(style="background: #0F140D")
+
+								.basket__price 12 000
+
+								.basket__del
+									+svg('ic-bin','ic-bin', '20', '22')
+
+						.basket__bottom
+							.row
+								.col-6
+									.choose-details
+										.choose-details__sect
+											.choose-details__info-wrap
+												.choose-details__info
+													.choose-details__name Анна Иванова
+													.choose-details__address
+														|ул. Ленина, 123
+														br
+														|Санкт-Петербург
+													.choose-details__tel 8(999)453-32-12
+
+												.choose-details__arr
+													+svg('ic-arr-right','ic-arr-right', '9', '16')
+
+											.choose-details__info-wrap
+												.choose-card
+													img(src="/upload/mastercard.svg", alt="")
+													.choose-card__label Master Card ending  ••••89
+												
+												.choose-details__arr
+													+svg('ic-arr-right','ic-arr-right', '9', '16')
+
+
+								.col-4.offset-2
+									.basket-res
+										.basket-res__main
+											.basket-res__label Итого
+											.basket-res__val 12 430
+
+										.basket-res__sale
+											.basket-res__label Скидка
+											.basket-res__val -2 000
+
+										a(href="#").btn
+											+svg('ic-bag','ic-bag', '20', '24')
+											|оформить заказ

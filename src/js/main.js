@@ -23,6 +23,8 @@ Fancybox.bind("[data-fancybox]", {
 	}
 });
 
+//Inputmask
+import Inputmask from "inputmask";
 
 // Лоадер
 const body = document.querySelector('.js-body');
@@ -201,3 +203,27 @@ document.querySelectorAll('.js-unwrap-block').forEach((accSection) => {
 	})
 });
 
+// Маска для телефона
+document.addEventListener("DOMContentLoaded", function(){
+	if(document.querySelector('.js-phone')){
+		Inputmask('+7 (999) 999-9999').mask('.js-phone');
+	}
+});
+
+// Слайдер банковских карточек
+if(document.querySelector('.js-cards-slider')){
+	const topSlider = new Swiper('.js-cards-slider',
+	{
+		modules: [Pagination],
+		loop:true,
+		pagination:{
+			el:".js-cards-slider-pagination",
+			clickable:true
+		},
+	});
+}
+
+// Вызов сообщения об успешном заказе
+if(document.querySelector('.js-success-order.active')){
+	Fancybox.show([{ src: "#success-order", type: "inline" }])
+}

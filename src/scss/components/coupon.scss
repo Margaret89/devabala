@@ -1,0 +1,55 @@
+/*-------------- coupon -----------------*/
+.coupon{
+	&__label{
+		font-size: 1.2rem;
+		font-weight: 800;
+		line-height: 1.2;
+		color: #A29C90;
+		margin-bottom: 16px;
+	}
+
+	&__content{
+		padding: 26px 22px;
+		background: #F2F1EC;
+
+		form{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+		}
+
+		input[type="text"]{
+			display: flex;
+			align-items: center;
+			height: 36px;
+			width: 234px;
+			font-family: var(--font-site);
+			@include font(normal, 800, 1.6rem, 1, var(--color-black));
+			padding: 0 0 0 33px;
+			border-radius: 0;
+			border: none;
+			border-bottom: 1px solid #80796B;
+			outline: none;
+			margin: 0;
+			background: transparent url(../img/coupon.svg) no-repeat 3px center;
+			box-shadow: none;
+			transition: border-color 0.2s ease 0s;
+		}
+
+		input[type="text"]:focus{border-color: var(--color-dark)}
+
+		input[type="text"]::placeholder{
+			color: #979797;
+			opacity: 1;
+		}
+	}
+
+	.btn,
+	input[type="submit"].btn{
+		height: 4.7rem;
+		min-width: 175px;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+	}
+}

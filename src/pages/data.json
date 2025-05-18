@@ -20,6 +20,26 @@
 			"href": "catalog-detail.html",
 			"title":"Каталог детальная"
 		},
+		"checkout":{
+			"href": "checkout.html",
+			"title":"Корзина"
+		},
+		"checkout-address":{
+			"href": "checkout-address.html",
+			"title":"Корзина (адрес доставки)"
+		},
+		"checkout-pay":{
+			"href": "checkout-pay.html",
+			"title":"Корзина (способ оплаты)"
+		},
+		"checkout-result":{
+			"href": "checkout-result.html",
+			"title":"Корзина (результат выбора карты)"
+		},
+		"checkout-success":{
+			"href": "checkout-success.html",
+			"title":"Корзина (попап)"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

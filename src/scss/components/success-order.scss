@@ -1,0 +1,72 @@
+/*-------------- success-order -----------------*/
+.success-order{
+	width: 558px;
+	padding: 32px 24px;
+	text-align: center;
+
+	&__head{
+		font-size: 2rem;
+		font-weight: 800;
+		line-height: 1.2;
+		color: var(--color-grey-dark);
+		text-transform: uppercase;
+		margin-bottom: 40px;
+	}
+
+	&__icon{margin-bottom: 22px;}
+
+	&__title{
+		font-family: var(--font-tenor);
+		font-size: 1.8rem;
+		line-height: 1.3;
+		color: var(--color-black);
+	}
+
+	&__text{
+		font-family: var(--font-tenor);
+		font-size: 1.5rem;
+		line-height: 1.3;
+		color: var(--color-black);
+		margin-top: 5px;
+	}
+
+	&__line{margin: 38px 0;}
+
+	&__btn{
+		display: flex;
+		gap: 10px;
+		margin-top: 70px;
+
+		.btn{width: calc(50% - 5px);}
+	}
+}
+
+.score{
+	text-align: center;
+
+	&__label{
+		font-family: var(--font-tenor);
+		font-size: 1.8rem;
+		line-height: 1.3;
+		color: var(--color-black);
+		margin-bottom: 15px;
+	}
+
+	&__list{
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+	}
+
+	&__item{
+		flex-shrink: 0;
+		cursor: pointer;
+
+		.icon{
+			color: #E0CFBA;
+			transition: color 0.2s ease;
+		}
+
+		&:hover .icon{color: var(--color-orange);}
+	}
+}

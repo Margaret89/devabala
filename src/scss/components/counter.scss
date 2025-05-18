@@ -1,0 +1,55 @@
+/*-------------- counter -----------------*/
+.counter{
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	&__toggle{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 40px;
+		height: 40px;
+		border: 1px solid #C4C4C4;
+		border-radius: 50%;
+		transition: background-color 0.2s ease 0s;
+		cursor: pointer;
+		
+		.icon{
+			color: #555;
+			transition: color 0.2s ease 0s;
+		}
+
+		&:hover{
+			border-color: #555;
+			background: #555;
+			.icon{color: #fff;}
+		}
+	}
+
+	input[type="text"],
+	input[type="number"]{
+		display: flex;
+		align-items: center;
+		height: 100%;
+		width: 40px;
+		font-family: var(--font-tenor);
+		@include font(normal, normal, 2.3rem, 1, var(--color-black));
+		text-align: center;
+		padding: 0;
+		border-radius: 0;
+		border: none;
+		outline: none;
+		margin: 0;
+		background: transparent;
+		box-shadow: none;
+		transition: background-color 0.2s ease 0s;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="number"]::placeholder{
+		color: #979797;
+		opacity: 1;
+	}
+}

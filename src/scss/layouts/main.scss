@@ -228,6 +228,18 @@ button.btn{
 		}
 	}
 
+	&_brown{
+		background: #80796B;
+		border-color: #80796B;
+		color: #fff;
+
+		&:hover{
+			background-color: #59544b;
+			border-color: #59544b;
+			color: #fff;
+		}
+	}
+
 	&_big{height: 6.4rem;}
 
 	&_small{
@@ -276,6 +288,8 @@ button.btn{
 .pb-indent{padding-bottom: var(--margin-indent);}
 
 .page-top{margin-bottom: 4rem;}
+
+.fancybox__container{--fancybox-bg: rgba(0, 0, 0, 0.6)!important;}
 
 .code{
 	background-color: #f7f7f7;

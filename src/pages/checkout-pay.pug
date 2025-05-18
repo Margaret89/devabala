@@ -1,0 +1,155 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'checkout-pay'
+	-
+		var breadcrumbs=[
+			{href:'#',name:'корзина'},
+		];
+
+block body
+	.page-top
+		.container
+			.row
+				.col-12
+					+breadcrumbs(breadcrumbs)
+
+	section.basket-wrap
+		.container
+			.row
+				.col-12
+					.basket
+						-
+							var list=[
+								{img:'basket1.jpg', title:'Бархатный топ'},
+								{img:'basket2.jpg', title:'свитер'},
+							]
+						each item in list
+							.basket__item
+								.basket__img-wrap
+									.basket__img
+										img(src="/upload/"+item.img, alt="")
+
+								.basket__main
+									.basket__title
+										a(href="#")= item.title
+
+									.counter
+										.counter__toggle
+											+svg('ic-minus','ic-minus', '20', '3')
+
+										.counter__field
+											input(type="text", value="1")
+
+										.counter__toggle
+											+svg('ic-plus','ic-plus', '18', '18')
+
+								.basket__param
+									.basket__label Размер
+									
+									.basket__size m
+
+								.basket__param
+									.basket__label цвет
+
+									.basket__color(style="background: #0F140D")
+
+								.basket__price 12 000
+
+								.basket__del
+									+svg('ic-bin','ic-bin', '20', '22')
+
+						.basket__bottom
+							.row
+								.col-6
+									.choose-details
+										.choose-details__sect
+											.choose-details__title адрес доставки
+
+											.choose-details__info-wrap
+												.choose-details__info
+													.choose-details__name Анна Иванова
+													.choose-details__address
+														|ул. Ленина, 123
+														br
+														|Санкт-Петербург
+													.choose-details__tel 8(999)453-32-12
+
+												.choose-details__arr
+													+svg('ic-arr-right','ic-arr-right', '9', '16')
+
+
+											.choose-details-btn
+												.choose-details-btn__text Добавить адрес доставки
+												.choose-details-btn__sign
+													+svg('ic-plus','ic-plus', '18', '18')
+
+										.choose-details__sect
+											.choose-details__title способ оплаты
+
+											.choose-details-btn
+												.choose-details-btn__text Выбрать способ оплаты
+												.choose-details-btn__sign
+													+svg('ic-arr-down','ic-arr-down', '16', '9')
+
+								.col-4.offset-2
+									.basket-res
+										.basket-res__main
+											.basket-res__label Итого
+											.basket-res__val 12 430
+
+										.basket-res__sale
+											.basket-res__label Скидка
+											.basket-res__val -2 000
+
+										a(href="#").btn
+											+svg('ic-bag','ic-bag', '20', '24')
+											|оформить заказ
+
+	.basket-popup
+		.basket-popup__top
+			.basket-popup__title способ оплаты
+			
+			.basket-popup__close
+				.ic-hamburger.active
+					span
+
+		.basket-popup__content
+			form.form-site
+				.cards-slider-wrap
+					.swiper.cards-slider.js-cards-slider
+						.swiper-wrapper
+							-
+								var list=[
+									{img:'card1.png'},
+									{img:'card2.png'},
+									{img:'card3.png'},
+								]
+							each item in list
+								.swiper-slide.cards-slider__item
+									img(src="/upload/"+item.img, alt="")
+
+					.swiper-pagination.js-cards-slider-pagination
+				.form-site__content
+					label.form-site__item.js-form-site-item
+						input(name="name", type="text", required="required", placeholder=" ")
+						.form-site__label Имя держателя
+
+					label.form-site__item.js-form-site-item
+						input(name="cvv", type="text", required="required", placeholder=" ")
+						.form-site__label CVV
+
+					label.form-site__item.form-site__item_half.js-form-site-item
+						input(name="month", type="text", placeholder=" ")
+						.form-site__label Месяц
+
+					label.form-site__item.form-site__item_half.js-form-site-item
+						input(name="year", type="text", placeholder=" ")
+						.form-site__label Год
+
+					label.form-site__item.js-form-site-item
+						input(name="number", type="text", placeholder=" ")
+						.form-site__label Номер карты
+
+				.form-site__btn
+					input(type="submit", value="добавить карту").btn.btn_brown.js-btn-submit
