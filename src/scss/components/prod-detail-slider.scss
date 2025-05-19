@@ -11,7 +11,6 @@
 
 	&__item{
 		height: auto;
-		padding-top: 129.4%;
 		position: relative;
 
 		img{
@@ -19,6 +18,10 @@
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&__content{
+		padding-top: 129.4%;
 	}
 
 	&__link{
@@ -120,6 +123,7 @@
 	position: absolute;
 	bottom: 11px;
 	right: 16px;
+	z-index: 10;
 
 	&__material{
 		display: inline-flex;
@@ -150,42 +154,30 @@
 	}
 }
 
-// @media (max-width: 1359px) {
-// 	.prod-detail-slider-wrap{margin-right: 0;}
-// }
+@media (max-width: 767px) {
+	.prod-detail-thumb-slider-wrap{display: none;}
 
-// @media (max-width: 991px) {
-// 	.prod-detail-slider-wrap{max-width: 780px;}
-// }
+	.prod-detail-slider-wrap{
+		display: block;
+		margin-left: -16px;
+		margin-right: -16px;
+	}
 
-// @media (max-width: 767px) {
-// 	.prod-detail-thumb-slider-wrap{display: none;}
+	.prod-detail-slider{
+		width: auto;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
 
-// 	.prod-detail-slider-wrap{
-// 		margin-left: -20px;
-// 		margin-right: -20px;
-// 		background: var(--bg-grey);
-// 		padding-bottom: 50px;
-// 	}
+	.detail-slider-info{
+		width: calc(100% - 32px);
 
-// 	.prod-detail-slider{
-// 		width: auto;
-// 		padding-left: 20px;
-// 		padding-right: 20px;
-
-// 		.swiper-button-next,
-// 		.swiper-button-prev{
-// 			width: 36px;
-// 			height: 36px;
-
-// 			.icon{
-// 				width: 11px;
-// 				height: 19px;
-// 			}
-// 		}
-
-// 		.swiper-button-next{right: 0px;}
-// 		.swiper-button-prev{left: 0px;}
-// 	}
-// }
+		.btn{
+			font-size: 1.2rem;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
 

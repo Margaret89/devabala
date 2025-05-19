@@ -4,7 +4,6 @@ block vars
 	- var pageId = 'main'
 	- var headerLight = 'true'
 
-
 block body
 	section.top-slider-wrap.mb-indent
 		.swiper.top-slider.js-top-slider
@@ -37,100 +36,110 @@ block body
 		.container
 			.row
 				.col-12
-					.slider-sect
-						.slider-sect__item.js-slider-sect-item
-							.swiper.slider-sect-img.js-slider-sect-img(data-pager="1")
-								.swiper-wrapper
-									-
-										var list=[
-											{img:'slider-sect1-1.jpg'},
-											{img:'slider-sect1-2.jpg'},
-											{img:'slider-sect1-3.jpg'},
-										]        
-									each item in list
-										.swiper-slide.slider-sect-img__slide(style="background-image: url(/upload/"+item.img+")")
+					.swiper.slider-sect.js-slider-sect
+						.swiper-wrapper
+							.swiper-slide.slider-sect__item.js-slider-sect-item
+								.swiper.slider-sect-img.js-slider-sect-img(data-pager="1")
+									.swiper-wrapper
+										-
+											var list=[
+												{img:'slider-sect1-1.jpg'},
+												{img:'slider-sect1-2.jpg'},
+												{img:'slider-sect1-3.jpg'},
+											]
+										each item in list
+											.swiper-slide.slider-sect-img__slide(style="background-image: url(/upload/"+item.img+")")
 
 
-							.slider-sect__num 01
+								.slider-sect__num 01
 
-							.slider-sect__content
-								.slider-sect__title Круизная коллекция
+								.slider-sect__content
+									.slider-sect__title Круизная коллекция
 
-								.swiper-pagination.js-slider-sect-img-pagination-1
+									.swiper-pagination.js-slider-sect-img-pagination-1
 
-								.slider-sect__btn
-									a(href="#").btn.btn_opacity Посмотреть
+									.slider-sect__btn
+										a(href="#").btn.btn_opacity Посмотреть
 
-						.slider-sect__item.js-slider-sect-item.active
-							.swiper.slider-sect-img.js-slider-sect-img(data-pager="2")
-								.swiper-wrapper
-									-
-										var list=[
-											{img:'slider-sect2-1.jpg'},
-											{img:'slider-sect2-2.jpg'},
-											{img:'slider-sect2-3.jpg'},
-										]        
-									each item in list
-										.swiper-slide.slider-sect-img__slide(style="background-image: url(/upload/"+item.img+")")
-
-
-							.slider-sect__num 02
-
-							.slider-sect__content
-								.slider-sect__title Для важных встреч
-
-								.swiper-pagination.js-slider-sect-img-pagination-2
-
-								.slider-sect__btn
-									a(href="#").btn.btn_opacity Посмотреть
-
-						.slider-sect__item.js-slider-sect-item
-							.swiper.slider-sect-img.js-slider-sect-img(data-pager="3")
-								.swiper-wrapper
-									-
-										var list=[
-											{img:'slider-sect3-1.jpg'},
-											{img:'slider-sect3-2.jpg'},
-											{img:'slider-sect3-3.jpg'},
-										]        
-									each item in list
-										.swiper-slide.slider-sect-img__slide(style="background-image: url(/upload/"+item.img+")")
+							.swiper-slide.slider-sect__item.js-slider-sect-item.active
+								.swiper.slider-sect-img.js-slider-sect-img(data-pager="2")
+									.swiper-wrapper
+										-
+											var list=[
+												{img:'slider-sect2-1.jpg'},
+												{img:'slider-sect2-2.jpg'},
+												{img:'slider-sect2-3.jpg'},
+											]        
+										each item in list
+											.swiper-slide.slider-sect-img__slide(style="background-image: url(/upload/"+item.img+")")
 
 
-							.slider-sect__num 03
+								.slider-sect__num 02
 
-							.slider-sect__content
-								.slider-sect__title Новая коллекция
+								.slider-sect__content
+									.slider-sect__title Для важных встреч
 
-								.swiper-pagination.js-slider-sect-img-pagination-3
+									.swiper-pagination.js-slider-sect-img-pagination-2
 
-								.slider-sect__btn
-									a(href="#").btn.btn_opacity Посмотреть
+									.slider-sect__btn
+										a(href="#").btn.btn_opacity Посмотреть
+
+							.swiper-slide.slider-sect__item.js-slider-sect-item
+								.swiper.slider-sect-img.js-slider-sect-img(data-pager="3")
+									.swiper-wrapper
+										-
+											var list=[
+												{img:'slider-sect3-1.jpg'},
+												{img:'slider-sect3-2.jpg'},
+												{img:'slider-sect3-3.jpg'},
+											]        
+										each item in list
+											.swiper-slide.slider-sect-img__slide(style="background-image: url(/upload/"+item.img+")")
+
+
+								.slider-sect__num 03
+
+								.slider-sect__content
+									.slider-sect__title Новая коллекция
+
+									.swiper-pagination.js-slider-sect-img-pagination-3
+
+									.slider-sect__btn
+										a(href="#").btn.btn_opacity Посмотреть
+
+						.swiper-button-prev.js-slider-sect-prev
+							+svg('ic-arrow-left','ic-arrow-left', '19', '16')
+						
+						.swiper-button-next.js-slider-sect-next
+							+svg('ic-arrow-right','ic-arrow-right', '19', '16')
 
 	section.catalog-main-wrap.m-indent
 		.container
 			.row
-				.col-5
-					.spec-title
-						a(href="#") Каталог
-					
-					ul.catalog-menu
-						-
-							var list=[
-								{text:'платья'},
-								{text:'корсеты'},
-								{text:'брюки'},
-								{text:'топы'},
-								{text:'юбки'},
-								{text:'жакеты'},
-								{text:'блузки'},
-							]
-						each item in list
-							li.catalog-menu__item
-								a(href="#")= item.text
-				.col-7
-					.catalog-main-wrap__img
-						img(src="/upload/woman.png", alt="")
+				.col-12
+					.catalog-main-wrap__content
+						.row
+							.col-md-5
+								.spec-title
+									a(href="#") Каталог
+								
+								ul.catalog-menu
+									-
+										var list=[
+											{text:'платья'},
+											{text:'корсеты'},
+											{text:'брюки'},
+											{text:'топы'},
+											{text:'юбки'},
+											{text:'жакеты'},
+											{text:'блузки'},
+										]
+									each item in list
+										li.catalog-menu__item
+											a(href="#")= item.text
+							.col-md-7.d-none.d-md-block
+								.catalog-main-wrap__img
+									img(src="/upload/woman.png", alt="")
 
 	section.collections-wrap.m-indent
 		.container
@@ -158,7 +167,7 @@ block body
 	section.special-products-wrap.m-indent
 		.container
 			.row
-				.col-7
+				.col-md-7
 					.special-products-wrap__content
 						.special-products-wrap__info
 							.special-products-wrap__title для летних вечеров
@@ -179,7 +188,7 @@ block body
 							a(href="#").btn.btn_clear посмотреть все
 								+svg('ic-arrow-right','ic-arrow-right', '19', '16')
 				
-				.col-5
+				.col-md-5.d-none.d-md-block
 					.special-products-wrap__img
 						img(src="/upload/special-product-big.jpg", alt="")
 
@@ -189,7 +198,7 @@ block body
 				.col-12
 					.spec-title.spec-title_small новая Коллекция
 
-					.new-collection
+					.new-collection.d-none.d-md-flex
 						-
 							var list=[
 								{img:'new-collection1.jpg', title:'Бархатный топ'},
@@ -204,7 +213,34 @@ block body
 								.new-collection__title= item.title
 									.new-collection__arrow
 										+svg('ic-arrow-right','ic-arrow-right', '19', '16')
-					
+
+					.swiper.slider-collection.js-slider-collection.d-md-none
+						.swiper-wrapper
+							-
+								var list=[
+									{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
+									{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
+									{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+									{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+									{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+									{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+									{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
+									{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
+								]
+							each item in list
+								.swiper-slide.catalog-item
+									a(href="#").catalog-item__img-wrap
+										.catalog-item__img
+											img(src="/upload/"+item.img, alt="")
+
+									.catalog-item__content
+										.catalog-item__title
+											a(href="#")= item.text
+
+										.catalog-item__price= item.price
+
+						.swiper-pagination.js-slider-collection-pagination
+				
 
 	section.promo.m-indent(style="background-image: url(/upload/promo.jpg)")
 		.container
@@ -232,14 +268,22 @@ block body
 							.collection-info__img
 								img(src="/upload/dress.jpg", alt="")
 
-							.collection-info__text It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
+							.collection-info__text.d-none.d-md-block It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
 
 						.collection-info__item.collection-info__item_sb
 							.collection-info__img
 								img(src="/upload/woman-dress-small.jpg", alt="")
 
-							.collection-info__img
+							.collection-info__img.d-none.d-md-block
 								img(src="/upload/texture1.jpg", alt="")
+
+						.collection-info__item.collection-info__item_big.d-md-none
+							.collection-info__text It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
+
+						.collection-info__item.collection-info__item_big.collection-info__item_end.d-md-none
+							.collection-info__img(style="max-width: 50%;")
+								img(src="/upload/texture1.jpg", alt="")
+						
 
 						.collection-info__item.collection-info__item_big
 							.collection-info__img
@@ -251,7 +295,7 @@ block body
 							.collection-info__img
 								img(src="/upload/blouse.jpg", alt="")
 
-						.collection-info__item.collection-info__item_sb
+						.collection-info__item.collection-info__item_sb.collection-info__item_mob-full
 							.collection-info__text It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
 
 							.collection-info__img
@@ -262,7 +306,7 @@ block body
 			.row
 				.col-12
 					.collection-about
-						.collection-about__img
+						.collection-about__img.d-none.d-md-block
 							img(src="/upload/white-big.jpg", alt="")
 
 						.collection-about__content
@@ -271,6 +315,9 @@ block body
 									img(src="/upload/logo-sun.svg", alt="")
 
 								.collection-about__title круизная коллекция
+
+							.collection-about__img.d-md-none
+								img(src="/upload/white-big.jpg", alt="")
 
 							.collection-about__main
 								.collection-about__main-img

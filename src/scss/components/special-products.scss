@@ -44,3 +44,39 @@
 	position: relative;
 	z-index: 2;
 }
+
+@media (max-width: 991px) {
+	.special-products-wrap{
+		&__title{font-size: 4rem;}
+	}
+}
+
+@media (max-width: 767px) {
+	.special-products-wrap{
+		&__title{
+			font-size: 3.2rem;
+			text-align: center;
+			margin-bottom: 3.4rem;
+
+			&::before{
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.special-products{
+		gap: 16px;
+		margin-left: -16px;
+		margin-right: -16px;
+		padding-left: 16px;
+		padding-right: 16px;
+		overflow-x: auto;
+
+		&__img{
+			flex-shrink: 0;
+			width: 220px;
+		}
+	}
+}

@@ -2,7 +2,7 @@ footer.footer
 	.footer__top
 		.container
 			.row
-				.col-8
+				.col-md-8
 					.footer-menu-wrap
 						.footer-menu-wrap__link
 							a(href="#") Каталог
@@ -35,36 +35,40 @@ footer.footer
 								.footer-menu__item(class=item.status?'active':'')
 									a(href="#")= item.text
 
-				.col-4
-					.footer-menu
-						-
-							var list=[
-								{text:'о бренде'},
-								{text:'блог'},
-								{text:'контакты'},
-							]
-						each item in list
-							.footer-menu__item(class=item.status?'active':'')
-								a(href="#")= item.text
+				.col-md-4
+					.footer__info
+						.footer-menu
+							-
+								var list=[
+									{text:'О бренде'},
+									{text:'Блог'},
+									{text:'Контакты'},
+								]
+							each item in list
+								.footer-menu__item(class=item.status?'active':'')
+									a(href="#")= item.text
 
-					.design-line
-						img(src="/img/design-line.svg", alt="")
+						.design-line
+							img(src="/img/design-line.svg", alt="")
 
-					.social
-						a(href="#").social__item
-							+svg('ic-instagram','ic-instagram', '20', '20')
+						.social
+							a(href="#").social__item
+								+svg('ic-instagram','ic-instagram', '20', '20')
 
-						a(href="#").social__item
-							+svg('ic-youtube','ic-youtube', '22', '19')
+							a(href="#").social__item
+								+svg('ic-youtube','ic-youtube', '22', '19')
 
-					.footer-contacts
-						.footer-contacts__item
-							a(href="mailto:support@devabala.ru") support@devabala.ru
+						.design-line.design-line_mobile
+							img(src="/img/design-line.svg", alt="")
 
-						.footer-contacts__item
-							a(href="tel:+79274568282") +7 (927) 456-82-82
+						.footer-contacts
+							.footer-contacts__item
+								a(href="mailto:support@devabala.ru") support@devabala.ru
 
-						.footer-contacts__item 08:00 - 18:00 - Ежедневно
+							.footer-contacts__item
+								a(href="tel:+79274568282") +7 (927) 456-82-82
+
+							.footer-contacts__item 08:00 - 18:00 - Ежедневно
 
 	.footer__bottom
 		.container

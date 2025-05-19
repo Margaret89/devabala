@@ -9,13 +9,13 @@ block vars
 		];
 
 block body
-	.page-top
+	.page-top.d-none.d-md-block
 		.container
 			.row
-				.col-3
+				.col-lg-3.col-md-4
 					+breadcrumbs(breadcrumbs)
 
-				.col-9
+				.col-lg-9.col-md-8
 					ul.catalog-menu-main.catalog-menu-main_column
 						-
 							var list=[
@@ -39,26 +39,26 @@ block body
 			.row
 				.col-12
 					.catalog-wrap__top
-						.filter-tag-wrap
-							.filter-tag-wrap__label.js-filter-open фильтр (2)
+						.filter-res
+							.filter-res__label.js-filter-open фильтр (2)
 
-							.filter-tag-wrap__cross
+							.filter-res__cross.d-none.d-md-block
 								.ic-hamburger.active
 									span
 
-							.filter-tag-wrap__list
-								-
-									var list=[
-										{label:'ДЛИНА:', val:' МИДИ'},
-										{label:'ТКАНЬ:', val:' ШИФОН'},
-									]
-								each item in list
-									.filter-tag
-										span.filter-tag__content
-											span.filter-tag__label= item.label
-											span.filter-tag__val= item.val
-										span.ic-hamburger.active
-											span
+						.filter-tag-list
+							-
+								var list=[
+									{label:'ДЛИНА:', val:' МИДИ'},
+									{label:'ТКАНЬ:', val:' ШИФОН'},
+								]
+							each item in list
+								.filter-tag
+									span.filter-tag__content
+										span.filter-tag__label= item.label
+										span.filter-tag__val= item.val
+									span.ic-hamburger.active
+										span
 
 						.filter.js-filter
 							.filter__top
@@ -176,7 +176,7 @@ block body
 							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
 						]
 					each item in list
-						.col-3
+						.col-6.col-md-3
 							.catalog-item
 								a(href="#").catalog-item__img-wrap
 									.catalog-item__img

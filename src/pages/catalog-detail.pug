@@ -9,7 +9,7 @@ block vars
 		];
 
 block body
-	.page-top
+	.page-top.d-none.d-md-block
 		.container
 			.row
 				.col-12
@@ -22,7 +22,7 @@ block body
 	section.catalog-detail
 		.container
 			.row
-				.col-6
+				.col-md-6
 					.prod-detail-slider-wrap
 						.prod-detail-thumb-slider-wrap
 							.swiper.prod-detail-thumb-slider.js-prod-detail-thumb-slider
@@ -68,8 +68,11 @@ block body
 									]
 								each item in list
 									.swiper-slide.prod-detail-slider__item
-										a.prod-detail-slider__link(href="/upload/"+item.img, data-fancybox='images')
-											img(src="/upload/"+item.img, alt="")
+										.prod-detail-slider__content
+											a.prod-detail-slider__link(href="/upload/"+item.img, data-fancybox='images')
+												img(src="/upload/"+item.img, alt="")
+
+							.swiper-pagination.js-prod-detail-slider-pagination
 
 						
 						.detail-slider-info
@@ -81,15 +84,26 @@ block body
 
 							a(href="#").btn.btn_opacity.btn_small с чем носить?
 
-				.col-6
+				.col-md-6
 					.catalog-detail__info
-						h1.catalog-detail__title Бархатный топ
-						
-						.catalog-detail__price 12 000
+						.catalog-detail__info-top
+							.catalog-detail__info-main
+								h1.catalog-detail__title Бархатный топ
+								
+								.catalog-detail__price 12 000
+
+							.catalog-detail-actions.d-md-none
+								.catalog-detail-actions__item
+									+svg('ic-heart','ic-heart', '15', '15')
+
+								.catalog-detail-actions__item
+									+svg('ic-export','ic-export', '13', '15')
 
 						.catalog-detail-params
 							.catalog-detail-params__item
-								.catalog-detail-params__label Выберите размер
+								.catalog-detail-params__label
+									span.d-none.d-md-inline-block Выберите размер
+									span.d-md-none Размер
 
 								.catalog-check-params
 									-
@@ -117,10 +131,10 @@ block body
 						.catalog-detail-actions
 							a(href="#").btn добавить в корзину
 
-							.catalog-detail-actions__item
+							.catalog-detail-actions__item.d-none.d-md-inline-flex
 								+svg('ic-heart','ic-heart', '24', '22')
 
-							.catalog-detail-actions__item
+							.catalog-detail-actions__item.d-none.d-md-inline-flex
 								+svg('ic-export','ic-export', '19', '23')
 
 						.catalog-detail__desc It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted  
@@ -151,7 +165,7 @@ block body
 					.sub-h1 Расскажите свою историю
 
 					.history
-						.col-6
+						.col-md-6
 							.history__content
 								.history__item
 									.history__img
@@ -159,11 +173,14 @@ block body
 										.history__pin
 											img(src="/img/pin.svg", alt="")
 
-									.history__text It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
+									.history__text.d-none.d-md-block It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
 
 								.history__item
 									.history__img
 										img(src="/upload/history2.jpg", alt="")
+
+								.history__item.history__item_full.d-md-none
+									.history__text It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted
 
 								.history__item.history__item_full.history__item_end
 									.history__img
@@ -186,25 +203,28 @@ block body
 				.col-12
 					.sub-h1 Вам может понравиться
 
-		.catalog-list
-			.container
-				.row
-					-
-						var list=[
-							{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
-							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
-							{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
-							{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
-						]
-					each item in list
-						.col-3
-							.catalog-item
-								a(href="#").catalog-item__img-wrap
-									.catalog-item__img
-										img(src="/upload/"+item.img, alt="")
+		.container
+			.row
+				.col-12
+					.catalog-slider.js-catalog-slider.swiper
+						.swiper-wrapper
+							-
+								var list=[
+									{img:'catalog1.jpg', text:'Бархатный топ', price:'12 000'},
+									{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
+									{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+									{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+								]
+							each item in list
+								.swiper-slide.catalog-item
+									a(href="#").catalog-item__img-wrap
+										.catalog-item__img
+											img(src="/upload/"+item.img, alt="")
 
-								.catalog-item__content
-									.catalog-item__title
-										a(href="#")= item.text
+									.catalog-item__content
+										.catalog-item__title
+											a(href="#")= item.text
 
-									.catalog-item__price= item.price
+										.catalog-item__price= item.price
+
+						.swiper-pagination.js-catalog-slider-pagination

@@ -38,3 +38,9 @@
 	from{stroke-dashoffset: 922;}
 	to{stroke-dashoffset: 0;}
 }
+
+@media (max-width: 991px) {
+	.promo{
+		&__title{font-size: 5.4rem;}
+	}
+}

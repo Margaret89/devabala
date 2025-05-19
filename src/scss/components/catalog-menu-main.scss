@@ -54,3 +54,43 @@
 		gap: 20px;
 	}
 }
+
+@media (max-width: 991px) {
+	.catalog-menu{
+		&__item{font-size: 4rem;}
+	}
+}
+
+@media (max-width: 767px) {
+	.catalog-main-wrap{
+		padding: 20px 0;
+
+		&__content{
+			position: relative;
+			background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: rgb(189, 112, 94); stroke-width: 1; stroke-dasharray: 20 20'/></svg>");
+			text-align: center;
+			padding: 46px 10px;
+			position: relative;
+
+			&::before{
+				content: "";
+				display: block;
+				width: 32px;
+				height: 54px;
+				background: url(/img/pin.svg) no-repeat center;
+				background-size: contain;
+				position: absolute;
+				top: -30px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+
+		.catalog-menu{
+			margin: 0;
+
+			&__item:not(:last-child){margin-bottom: 28px;}
+		}
+	}
+}

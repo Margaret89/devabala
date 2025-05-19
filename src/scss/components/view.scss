@@ -35,3 +35,9 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.view{
+		&__label{font-size: 1.2rem;}
+	}
+}

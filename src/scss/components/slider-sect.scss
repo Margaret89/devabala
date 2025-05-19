@@ -1,25 +1,23 @@
 /*-------------- slider-sect -----------------*/
 .slider-sect{
-	display: flex;
+	box-sizing: border-box;
 
 	&__item{
-		width: 25%;
 		background-repeat: no-repeat;
 		background-position: left center;
 		background-size: cover;
 		text-align: center;
-		transition: width 0.2s ease 0s;
 		position: relative;
 	}
 
 	&__content{
-		display: none;
 		width: 100%;
 		padding: 53px 10px;
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		z-index: 2;
+		box-sizing: border-box;
 
 		.btn{min-width: 332px;}
 	}
@@ -47,13 +45,6 @@
 		transition: all 0.2s ease 0s;
 		z-index: 2;
 	}
-
-	&__item.active{
-		flex-shrink: 0;
-		width: 50%;
-	}
-
-	&__item.active &__content{display: block;}
 }
 
 body .slider-sect .swiper-horizontal > .swiper-pagination-bullets,
@@ -82,4 +73,89 @@ body .slider-sect .swiper-pagination-bullets.swiper-pagination-horizontal{
 			left: 0;
 		}
 	}
+}
+
+@media (max-width: 991px) {
+	.slider-sect{
+		&__title{font-size: 4rem;}
+	}
+
+	.slider-sect-img{height: 632px;}
+}
+
+@media (min-width: 768px) {
+	.slider-sect{
+		display: block!important;
+		& > .swiper-wrapper{display: flex!important;}
+
+		&__item{
+			width: 25%!important;
+			transition: width 0.2s ease 0s!important;
+		}
+
+		&__item.active{
+			flex-shrink: 0;
+			width: 50%!important;
+		}
+
+		&__content{display: none;}
+		&__item.active &__content{display: block;}
+
+		.swiper-button-prev,
+		.swiper-button-next{
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.slider-sect{
+		margin-left: -16px!important;
+		margin-right: -16px!important;
+
+		&__title{margin-bottom: 40px;}
+
+		.swiper-button-prev.swiper-button-disabled,
+		.swiper-button-next.swiper-button-disabled{
+			display: none;
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			z-index: 10;
+
+			.icon{color: #fff;}
+
+			&::after{display: none;}
+		}
+
+		&__num{
+			right: auto;
+			left: 45px;
+		}
+	}
+
+	body .slider-sect .swiper-horizontal > .swiper-pagination-bullets,
+	body .slider-sect .swiper-pagination-bullets.swiper-pagination-horizontal{
+		gap: 0;
+		width: calc(100% - 32px);
+		margin: 0;
+		position: absolute;
+		bottom: 25px;
+		left: 16px;
+	}
+
+	body .slider-sect .swiper-pagination-bullet{
+		width: 100%;
+		height: 1px;
+		background: #fff;
+		border-radius: 0;
+	}
+
+	body .slider-sect .swiper-pagination-bullet-active{height: 6px;}
 }

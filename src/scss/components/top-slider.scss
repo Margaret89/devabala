@@ -71,3 +71,10 @@
 }
 
 .swiper-slide.top-slider__item{height: 100vh;}
+
+@media (max-width: 991px) {
+	.top-slider{
+		&__title{font-size: 6rem;}
+		&__text{font-size: 1.8rem;}
+	}
+}

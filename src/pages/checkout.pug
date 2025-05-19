@@ -22,13 +22,26 @@ block body
 						-
 							var list=[
 								{img:'basket1.jpg', title:'Бархатный топ'},
-								{img:'basket2.jpg', title:'свитер'},
+								{img:'basket2.jpg', title:'Свитер'},
 							]
 						each item in list
 							.basket__item
 								.basket__img-wrap
 									.basket__img
 										img(src="/upload/"+item.img, alt="")
+
+								.basket__mobile
+									.basket__title
+										a(href="#")= item.title
+									
+									.basket__price 12 000
+
+									.basket__params
+										.basket__param
+											.basket__size m
+
+										.basket__param
+											.basket__color(style="background: #0F140D")
 
 								.basket__main
 									.basket__title
@@ -61,7 +74,7 @@ block body
 
 						.basket__bottom
 							.row
-								.col-6
+								.col-lg-6
 									.coupon
 										.coupon__label Введите промокод для скидки
 
@@ -70,7 +83,7 @@ block body
 												input(type="text", placeholder="Промокод")
 												input(type="submit", value="применить").btn.btn_brown 
 
-								.col-4.offset-2
+								.col-lg-5.offset-lg-1.col-xl-4.offset-xl-2
 									.basket-res
 										.basket-res__main
 											.basket-res__label Итого

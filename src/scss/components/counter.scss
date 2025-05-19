@@ -53,3 +53,25 @@
 		opacity: 1;
 	}
 }
+
+@media (max-width: 991px) {
+	.counter{
+		gap: 0;
+
+		&__toggle{
+			width: 24px;
+			height: 24px;
+
+			.icon{
+				max-width: 12px;
+				max-height: 12px;
+			}
+		}
+
+		input[type="text"],
+		input[type="number"]{
+			width: 20px;
+			font-size: 1.4rem;
+		}
+	}
+}

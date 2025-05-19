@@ -14,14 +14,21 @@ header.header(class=headerLight?'header_light':'')
 						.main-menu-wrap__content
 							.container
 								.row
-									.col-3
+									.col-12.d-lg-none
+										.main-menu-choose
+											.main-menu-choose__item.js-main-menu-choose-item(data-id="1").active Категории
+												.main-menu-choose__line
+											.main-menu-choose__item.js-main-menu-choose-item(data-id="2") Коллекции
+												.main-menu-choose__line
+
+									.col-3.d-none.d-lg-block
 										.main-menu-wrap__sect
 											.main-menu-wrap__title
 												a(href="#")  Каталог
 
-									.col-3
-										.main-menu-wrap__sect
-											.main-menu-wrap__title Категории
+									.col-lg-3
+										.main-menu-wrap__sect.js-main-menu-wrap-sect.active(data-id="1")
+											.main-menu-wrap__title.d-none.d-lg-block Категории
 
 											.main-menu
 												-
@@ -39,9 +46,9 @@ header.header(class=headerLight?'header_light':'')
 													.main-menu__item
 														a(href="#")= item.text
 
-									.col-6
-										.main-menu-wrap__sect
-											.main-menu-wrap__title Коллекции
+									.col-lg-6
+										.main-menu-wrap__sect.js-main-menu-wrap-sect(data-id="2")
+											.main-menu-wrap__title.d-none.d-lg-block Коллекции
 
 											.main-menu
 												-
@@ -55,7 +62,7 @@ header.header(class=headerLight?'header_light':'')
 													.main-menu__item(class=item.status?'active':'')
 														a(href="#")= item.text
 
-						.menu-sect
+						.menu-sect.d-none.d-lg-block
 							.container
 								.row
 									-
@@ -70,9 +77,20 @@ header.header(class=headerLight?'header_light':'')
 											a(href="#", style="background-image: url(/upload/"+item.img+")").menu-sect__item
 												.menu-sect__text= item.text
 
+						.main-menu-contacts.d-lg-none
+							a(href="tel:+79274568282").main-menu-contacts__phone
+								+svg('ic-call','ic-call', '22', '22')
+								|+7(927)456-82-82
+
+							.social
+								a(href="#").social__item
+									+svg('ic-instagram','ic-instagram', '20', '20')
+
+								a(href="#").social__item
+									+svg('ic-youtube','ic-youtube', '22', '19')
+
 			.col-4
-				if(pageId!='main')
-					.header__logo DEVABALA
+				.header__logo(class=pageId='main'?'d-md-none':'') DEVABALA
 
 			.col-4
 				.header-actions

@@ -9,7 +9,7 @@ block vars
 		];
 
 block body
-	.page-top
+	.page-top.d-none.d-md-block
 		.container
 			.row
 				.col-3
@@ -162,7 +162,7 @@ block body
 							{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
 						]
 					each item in list
-						.col-3
+						.col-6.col-md-3
 							.catalog-item
 								a(href="#").catalog-item__img-wrap
 									.catalog-item__img

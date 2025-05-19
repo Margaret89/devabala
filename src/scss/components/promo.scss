@@ -24,3 +24,11 @@
 		margin-top: 40px;
 	}
 }
+
+@media (max-width: 767px) {
+	.promo{
+		height: 500px;
+
+		&__title{font-size: 3.2rem;}
+	}
+}

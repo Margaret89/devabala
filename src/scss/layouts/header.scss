@@ -48,3 +48,18 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.header-actions{
+		gap: 16px;
+
+		&__item{
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	.header{
+		&__logo{font-size: 1.8rem;}
+	}
+}

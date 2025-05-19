@@ -29,3 +29,13 @@
 		gap: 10px;
 	}
 }
+
+@media (max-width: 767px) {
+	.collection-info{
+		gap: 40px 0;
+
+		&__item{width: 50%;}
+		&__item_big{width: 100%;}
+		&__item_mob-full{width: 100%;}
+	}
+}

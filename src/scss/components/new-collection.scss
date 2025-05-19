@@ -52,3 +52,31 @@
 
 	&__item:hover &__arrow{transform: translateX(10px);}
 }
+
+@media (max-width: 767px) {
+	.slider-collection{
+		&.swiper{
+			margin-left: -16px;
+			margin-right: -16px;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
+	body .slider-collection.swiper-horizontal > .swiper-pagination-bullets,
+	body .slider-collection .swiper-pagination-bullets.swiper-pagination-horizontal{
+		gap: 0;
+		width: 100%;
+		margin: 0;
+		position: static;
+	}
+
+	body .slider-collection .swiper-pagination-bullet{
+		width: 100%;
+		height: 1px;
+		background: var(--color-orange);
+		border-radius: 0;
+	}
+
+	body .slider-collection .swiper-pagination-bullet-active{height: 6px;}
+}

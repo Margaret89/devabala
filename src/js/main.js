@@ -91,8 +91,56 @@ if(document.querySelector('.js-top-slider')){
 	});
 }
 
+// Слайдер коллекций
+if(document.querySelector('.js-slider-collection')){
+	const sliderCollection = new Swiper('.js-slider-collection',
+	{
+		modules: [Pagination],
+		slidesPerView: 1.2,
+		spaceBetween: 24,
+		pagination:{
+			el:".js-slider-collection-pagination",
+			clickable:true
+		},
+	});
+}
+
+// Слайдер товаров
+if(document.querySelector('.js-catalog-slider')){
+	const sliderCollection = new Swiper('.js-catalog-slider',
+	{
+		modules: [Pagination],
+		slidesPerView: 1.2,
+		spaceBetween: 24,
+		pagination:{
+			el:".js-catalog-slider-pagination",
+			clickable:true
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 20,
+			}
+		}
+	});
+}
+
 // Слайдер категорий
+const screenWidth = window.screen.width;
+
 if(document.querySelector('.js-slider-sect-img')){
+	if(screenWidth < 768){
+		const sliderSect = new Swiper('.js-slider-sect',
+		{
+			slidesPerView: 1,
+			modules: [Navigation],
+			navigation: {
+				nextEl: ".js-slider-sect-next",
+				prevEl: ".js-slider-sect-prev",
+			},
+		});
+	}
+	
 	document.querySelectorAll('.js-slider-sect-img').forEach(function(sliderSect){
 		const numSlider = sliderSect.getAttribute('data-pager');
 
@@ -161,7 +209,7 @@ if(document.querySelector('.js-filter-close')){
 //Слайдер детального изображения каталога
 var prodDetailSliderThumb = new Swiper('.js-prod-detail-thumb-slider', {
 	modules: [Navigation],
-	slidesPerView: 5,
+	slidesPerView: 2,
 	spaceBetween: 5,
 	freeMode: true,
 	watchSlidesProgress: true,
@@ -171,19 +219,34 @@ var prodDetailSliderThumb = new Swiper('.js-prod-detail-thumb-slider', {
 		prevEl: ".js-prod-detail-thumb-slider-prev",
 	},
 	breakpoints: {
-		1280: {
+		992: {
+			slidesPerView: 4,
+			spaceBetween: 10,
+		},
+		768: {
+			slidesPerView: 3,
 			spaceBetween: 10,
 		}
 	}
 	// loop: true,
 });
 var prodDetailSlider = new Swiper('.js-prod-detail-slider', {
-	modules: [Thumbs],
+	modules: [Thumbs, Pagination],
 	spaceBetween: 20,
+	// direction: "vertical",
 	// loop: true,
 	thumbs: {
 		swiper: prodDetailSliderThumb,
 	},
+	pagination:{
+		el:".js-prod-detail-slider-pagination",
+		clickable:true
+	},
+	// breakpoints: {
+	// 	// 768: {
+	// 	// 	direction: "horizontal",
+	// 	// }
+	// }
 });
 
 // Раскрывающийся блок
@@ -226,4 +289,29 @@ if(document.querySelector('.js-cards-slider')){
 // Вызов сообщения об успешном заказе
 if(document.querySelector('.js-success-order.active')){
 	Fancybox.show([{ src: "#success-order", type: "inline" }])
+}
+
+// Переключение мобильного меню
+if(document.querySelector('.js-main-menu-choose-item')){
+	document.querySelectorAll('.js-main-menu-choose-item').forEach((itemMenu) => {
+		itemMenu.addEventListener('click', () => {
+			let idMenu = itemMenu.getAttribute('data-id');
+			console.log('idMenu = ', idMenu);
+
+			showSectMenu(idMenu);
+		})
+
+		function showSectMenu(id) {
+			document.querySelectorAll('.js-main-menu-choose-item').forEach(function(item){
+				item.classList.remove('active');
+			});
+	
+			document.querySelectorAll('.js-main-menu-wrap-sect').forEach(function(item){
+				item.classList.remove('active');
+			});
+
+			document.querySelector('.js-main-menu-choose-item[data-id="'+id+'"]').classList.add('active');
+			document.querySelector('.js-main-menu-wrap-sect[data-id="'+id+'"]').classList.add('active');
+		}
+	});
 }
