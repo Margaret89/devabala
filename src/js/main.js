@@ -68,6 +68,7 @@ if(document.querySelector('.js-loader')){
 if(document.querySelector('.js-main-menu-open')){
 	document.querySelector('.js-main-menu-open').addEventListener("click", function(e){
 		document.querySelector('.js-main-menu-wrap-popup').classList.add('active');
+		document.querySelector('.js-header').classList.add('open-menu');
 	});
 }
 
@@ -75,6 +76,7 @@ if(document.querySelector('.js-main-menu-open')){
 if(document.querySelector('.js-main-menu-close')){
 	document.querySelector('.js-main-menu-close').addEventListener("click", function(e){
 		document.querySelector('.js-main-menu-wrap-popup').classList.remove('active');
+		document.querySelector('.js-header').classList.remove('open-menu');
 	});
 }
 
@@ -313,5 +315,12 @@ if(document.querySelector('.js-main-menu-choose-item')){
 			document.querySelector('.js-main-menu-choose-item[data-id="'+id+'"]').classList.add('active');
 			document.querySelector('.js-main-menu-wrap-sect[data-id="'+id+'"]').classList.add('active');
 		}
+	});
+}
+
+//Открыть информацию о товаре
+if(document.querySelector('.js-info-material-btn')){
+	document.querySelector('.js-info-material-btn').addEventListener("click", function(e){
+		document.querySelector('.js-info-material').classList.toggle('active');
 	});
 }

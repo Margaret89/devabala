@@ -77,7 +77,16 @@ block body
 						
 						.detail-slider-info
 							.detail-slider-info__material
-								img(src="/upload/tvid.png", alt="")
+								.info-material-btn.js-info-material-btn
+									img(src="/upload/tvid.png", alt="")
+
+								.info-material.js-info-material
+									.info-material__img-wrap
+										.info-material__img
+											img(src="/upload/material-tvid.jpg", alt="")
+
+									.info-material__title Твид
+									.info-material__text Премиальное исполнение английской ткани из нитей голубого и чёрного цветов 
 
 							.detail-slider-info__scale
 								+svg('ic-resize','ic-resize', '18', '18')

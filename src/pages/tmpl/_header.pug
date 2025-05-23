@@ -1,4 +1,4 @@
-header.header(class=headerLight?'header_light':'')
+header.header.js-header(class=headerLight?'header_light':'')
 	.container
 		.row
 			.col-4
@@ -7,9 +7,10 @@ header.header(class=headerLight?'header_light':'')
 						+svg('ic-menu','ic-menu', '38', '30')
 
 					.main-menu-wrap__popup.js-main-menu-wrap-popup
-						.main-menu-wrap__close
-							.ic-hamburger.active.js-main-menu-close
-								span
+						.main-menu-wrap__close.js-main-menu-close
+							+svg('ic-close','ic-close', '24', '24')
+							//- .ic-hamburger.active.js-main-menu-close
+							//- 	span
 
 						.main-menu-wrap__content
 							.container

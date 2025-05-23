@@ -55,3 +55,9 @@
 
 	&.hide{display: none;}
 }
+
+@media (max-width: 767px) {
+	.loader{
+		&__name{font-size: 4rem;}
+	}
+}

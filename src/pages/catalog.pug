@@ -9,13 +9,13 @@ block vars
 		];
 
 block body
-	.page-top.d-none.d-md-block
+	.page-top
 		.container
 			.row
-				.col-3
+				.col-3.d-none.d-md-block
 					+breadcrumbs(breadcrumbs)
 
-				.col-9
+				.col-md-9
 					ul.catalog-menu-main.catalog-menu-main_column
 						-
 							var list=[

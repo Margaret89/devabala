@@ -15,6 +15,13 @@
 		text-align: center;
 	}
 
+	&__info{
+		.footer-menu{
+			column-count: 2;
+			gap: 20px;
+		}
+	}
+
 	.social{margin-top: 15px;}
 	.design-line_mobile{display: none;}
 }
@@ -135,6 +142,7 @@
 				&__item{
 					font-size: 1.6rem;
 					text-transform: none;
+					margin: 0;
 				}
 			}
 		}
