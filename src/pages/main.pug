@@ -28,7 +28,7 @@ block body
 
 											.top-slider__text= item.text
 											
-										a.btn.btn_opacity(href="#") Посмотреть каталог
+										a.btn.btn_opacity.btn_big(href="#") Посмотреть каталог
 
 		.swiper-pagination.js-top-slider-pagination
 
@@ -60,6 +60,7 @@ block body
 
 									.slider-sect__btn
 										a(href="#").btn.btn_opacity Посмотреть
+										
 
 							.swiper-slide.slider-sect__item.js-slider-sect-item.active
 								.swiper.slider-sect-img.js-slider-sect-img(data-pager="2")
@@ -126,7 +127,7 @@ block body
 								ul.catalog-menu
 									-
 										var list=[
-											{text:'платья'},
+											{text:'платья', status:'active'},
 											{text:'корсеты'},
 											{text:'брюки'},
 											{text:'топы'},
@@ -134,12 +135,24 @@ block body
 											{text:'жакеты'},
 											{text:'блузки'},
 										]
-									each item in list
+									each item, index in list
 										li.catalog-menu__item
-											a(href="#")= item.text
+											a.catalog-menu__link.js-catalog-menu-link(href="#", data-id=index, class=item.status?'active':'')= item.text
 							.col-md-7.d-none.d-md-block
-								.catalog-main-wrap__img
-									img(src="/upload/woman.png", alt="")
+								.catalog-main-wrap__img-wrap
+									-
+										var list=[
+											{img:'woman1.jpg', status:'active'},
+											{img:'woman2.jpg'},
+											{img:'woman3.jpg'},
+											{img:'woman4.jpg'},
+											{img:'woman5.jpg'},
+											{img:'woman6.jpg'},
+											{img:'woman7.jpg'},
+										]
+									each item, index in list
+										.catalog-main-wrap__img.js-catalog-main-wrap-img(data-id=index, class=item.status?'active':'')
+											img(src="/upload/"+item.img, alt="")
 
 	section.collections-wrap.m-indent
 		.container
@@ -148,21 +161,21 @@ block body
 					.collections
 						.spec-title Коллекция
 
-		.collections-list
-			-
-				var list=[
-					{img:'collection1.jpg'},
-					{img:'collection2.jpg'},
-					{img:'collection3.jpg'},
-				]
-			each item in list
-				.collections-list__img
-					img(src="/upload/"+item.img, alt="")
-		
-		.collections__btn
-			a(href="#").btn.btn_clear посмотреть все
-				+svg('ic-arrow-right','ic-arrow-right', '19', '16')
+					.collections-list
+						-
+							var list=[
+								{img:'collection1.jpg'},
+								{img:'collection2.jpg'},
+								{img:'collection3.jpg'},
+							]
+						each item in list
+							a(href="#").collections-list__img
+								img(src="/upload/"+item.img, alt="")
 					
+					.collections__btn
+						a(href="#").btn.btn_clear посмотреть все
+							+svg('ic-arrow-right','ic-arrow-right', '19', '16')
+								
 				
 	section.special-products-wrap.m-indent
 		.container
@@ -229,8 +242,8 @@ block body
 								]
 							each item in list
 								.swiper-slide.catalog-item
-									a(href="#").catalog-item__img-wrap
-										.catalog-item__img
+									.catalog-item__img-wrap
+										a(href="#").catalog-item__img
 											img(src="/upload/"+item.img, alt="")
 
 									.catalog-item__content

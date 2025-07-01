@@ -7,10 +7,13 @@ header.header.js-header(class=headerLight?'header_light':'')
 						+svg('ic-menu','ic-menu', '38', '30')
 
 					.main-menu-wrap__popup.js-main-menu-wrap-popup
-						.main-menu-wrap__close.js-main-menu-close
-							+svg('ic-close','ic-close', '24', '24')
-							//- .ic-hamburger.active.js-main-menu-close
-							//- 	span
+						.container
+							.row
+								.col-12
+									.main-menu-wrap__close.js-main-menu-close
+										+svg('ic-close','ic-close', '24', '24')
+										//- .ic-hamburger.active.js-main-menu-close
+										//- 	span
 
 						.main-menu-wrap__content
 							.container
@@ -91,12 +94,12 @@ header.header.js-header(class=headerLight?'header_light':'')
 									+svg('ic-youtube','ic-youtube', '22', '19')
 
 			.col-4
-				.header__logo(class=pageId='main'?'d-md-none':'') DEVABALA
+				.header__logo(class=pageId=='main'?'d-md-none':'') DEVABALA
 
 			.col-4
 				.header-actions
 					.header-actions__item
-						+svg('ic-search','ic-search', '28', '28')
+						+svg('ic-search','ic-search', '26', '30')
 
 					.header-actions__item
-						+svg('ic-bag','ic-bag', '24', '30')
+						+svg('ic-bag','ic-bag', '26', '32')

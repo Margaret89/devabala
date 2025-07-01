@@ -45,11 +45,11 @@ block body
 											.prod-detail-thumb-slider__img
 												img(src="/upload/"+item.img, alt="")
 
-							.swiper-button-prev.js-prod-detail-thumb-slider-prev
-								+svg('ic-arr-up','ic-arr-up', '16', '9')
+							//- .swiper-button-prev.js-prod-detail-thumb-slider-prev
+							//- 	+svg('ic-arr-up','ic-arr-up', '16', '9')
 							
-							.swiper-button-next.js-prod-detail-thumb-slider-next
-								+svg('ic-arr-down','ic-arr-down', '16', '9')
+							//- .swiper-button-next.js-prod-detail-thumb-slider-next
+							//- 	+svg('ic-arr-down','ic-arr-down', '16', '9')
 
 						.swiper.prod-detail-slider.js-prod-detail-slider
 							.swiper-wrapper
@@ -93,7 +93,7 @@ block body
 
 							a(href="#").btn.btn_opacity.btn_small с чем носить?
 
-				.col-md-6
+				.col-md-6.catalog-detail__info-wrap
 					.catalog-detail__info
 						.catalog-detail__info-top
 							.catalog-detail__info-main
@@ -169,12 +169,13 @@ block body
 										.unwrap-block__info.js-unwrap-info
 											| It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted It is a long established fact that a reader will be distracted  
 
-			.row.mt-indent
-				.col-12
+				//- .row.mt-indent
+				//- .col-12
+				.col-md-6
 					.sub-h1 Расскажите свою историю
 
 					.history
-						.col-md-6
+							//- .col-md-6
 							.history__content
 								.history__item
 									.history__img
@@ -226,8 +227,8 @@ block body
 								]
 							each item in list
 								.swiper-slide.catalog-item
-									a(href="#").catalog-item__img-wrap
-										.catalog-item__img
+									.catalog-item__img-wrap
+										a(href="#").catalog-item__img
 											img(src="/upload/"+item.img, alt="")
 
 									.catalog-item__content
@@ -237,3 +238,36 @@ block body
 										.catalog-item__price= item.price
 
 						.swiper-pagination.js-catalog-slider-pagination
+
+	.detail-bar
+		.detail-bar__top
+			.catalog-detail-params
+				.catalog-detail-params__item
+					.catalog-detail-params__label Размер
+
+					.catalog-check-params
+						-
+							var list=[
+								{text:'s', status:'active'},
+								{text:'m'},
+								{text:'l'},
+							]
+						each item in list
+							.catalog-check-params__item(class=item.status?'active':'')= item.text
+
+				.catalog-detail-params__item
+					.catalog-detail-params__label Цвет
+
+					.catalog-check-params-color
+						-
+							var list=[
+								{color:'#0F140D', status:'active'},
+								{color:'#E1E0DB'},
+							]
+						each item in list
+							.catalog-check-params-color__item(class=item.status?'active':'')
+								.catalog-check-params-color__val(style="background:"+item.color)
+
+		a(href="#").btn
+			+svg('ic-plus','ic-plus', '18', '18')
+			| добавить в корзину

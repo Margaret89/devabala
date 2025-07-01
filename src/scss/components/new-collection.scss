@@ -2,11 +2,11 @@
 .new-collection{
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 40px;
 
 	&__item{
 		display: block;
-		width: calc(33.33% - 13.33px);
+		width: calc(33.33% - 26.66px);
 		text-align: center;
 		text-decoration: none;
 	}

@@ -394,3 +394,7 @@ body .basket-popup .swiper-pagination-bullet-active{
 
 	.basket-popup{width: 100%;}
 }
+
+@media (max-width: 767px) {
+	.basket-wrap{margin-top: -4rem;}
+}

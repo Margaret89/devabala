@@ -1,12 +1,12 @@
 /*-------------- prod-detail-slider -----------------*/
 .prod-detail-slider-wrap{
 	display: flex;
-	gap: 20px;
+	gap: 16px;
 	position: relative;
 }
 
 .prod-detail-slider{
-	width: calc(100% - 104px);
+	width: calc(100% - 68px);
 	margin: 0;
 
 	&__item{
@@ -38,7 +38,7 @@
 
 .prod-detail-thumb-slider-wrap{
 	flex-shrink: 0;
-	width: 84px;
+	width: 52px;
 	position: relative;
 
 	.swiper-button-prev,
@@ -81,7 +81,8 @@
 		display: block;
 		height: auto;
 		vertical-align: top;
-		padding-top: 129%;
+		padding-top: 136%;
+		// padding-top: 129%;
 		overflow: hidden;
 		position: relative;
 		border: none;

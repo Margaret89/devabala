@@ -20,7 +20,7 @@ block body
 						-
 							var list=[
 								{text:'вечерние образы'},
-								{text:'круизная коллекция', status:'active'},
+								{text:'круизная коллекция'},
 								{text:'На все случаи'},
 								{text:'весна 2025'},
 							]
@@ -143,7 +143,7 @@ block body
 							.view__label Вид
 
 							.view__list
-								.view__item
+								.view__item.d-none.d-md-inline-flex
 									+svg('ic-random','ic-random', '16', '16')
 
 								.view__item.active
@@ -163,9 +163,12 @@ block body
 					each item in list
 						.col-6
 							.catalog-item
-								a(href="#").catalog-item__img-wrap
-									.catalog-item__img
+								.catalog-item__img-wrap
+									a(href="#").catalog-item__img
 										img(src="/upload/"+item.img, alt="")
+
+									.catalog-item__wish
+										+svg('ic-heart','ic-heart', '15', '13')
 
 								.catalog-item__content
 									.catalog-item__title
@@ -185,8 +188,8 @@ block body
 					each item in list
 						.col-6.col-md-3
 							.catalog-item
-								a(href="#").catalog-item__img-wrap
-									.catalog-item__img
+								.catalog-item__img-wrap
+									a(href="#").catalog-item__img
 										img(src="/upload/"+item.img, alt="")
 
 								.catalog-item__content
@@ -204,8 +207,8 @@ block body
 					each item in list
 						.col-6.col-md-3
 							.catalog-item
-								a(href="#").catalog-item__img-wrap
-									.catalog-item__img
+								.catalog-item__img-wrap
+									a(href="#").catalog-item__img
 										img(src="/upload/"+item.img, alt="")
 
 								.catalog-item__content
@@ -229,8 +232,8 @@ block body
 					each item in list
 						.col-6.col-md-3
 							.catalog-item
-								a(href="#").catalog-item__img-wrap
-									.catalog-item__img
+								.catalog-item__img-wrap
+									a(href="#").catalog-item__img
 										img(src="/upload/"+item.img, alt="")
 
 								.catalog-item__content

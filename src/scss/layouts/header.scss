@@ -3,7 +3,7 @@
 	align-items: center;
 	height: 88px;
 	position: relative;
-	z-index: 1000;
+	// z-index: 1000;
 
 	&__logo{
 		display: flex;
@@ -60,6 +60,7 @@
 	}
 
 	.header{
+		height: 60px;
 		&__logo{font-size: 1.8rem;}
 
 		&.open-menu.header_light .main-menu-wrap__btn .icon,

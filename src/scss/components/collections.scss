@@ -28,8 +28,12 @@
 	}
 
 	&__img{
+		display: block;
 		width: 33.33%;
+		transition: opacity 0.2s ease;
 
 		img{width: 100%;}
+
+		&:hover{opacity: 0.6;}
 	}
 }

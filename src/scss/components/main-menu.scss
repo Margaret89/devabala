@@ -17,23 +17,32 @@
 
 	&__popup{
 		width: 100vw;
-		max-height: 100vh;
+		height: 100vh;
 		background: #F2F1EC url(../img/thread.svg) no-repeat bottom center;
+		background-size: 100%;
 		padding: 115px 0 60px;
 		position: fixed;
-		top: -100vh;
+		// top: -100vh;
+		top: 0;
 		left: 0;
-		z-index: 2;
+		z-index: -1;
 		overflow-y: auto;
-		transition: top 0.3s ease 0s;
+		opacity: 0;
+		transition: opacity 0.2s ease 0s;
 
-		&.active{top: 0;}
+		// &.active{top: 0;}
+		&.active{
+			opacity: 1;
+			z-index: 2;
+		}
+
+		& > .container{position: relative;}
 	}
 
 	&__close{
 		position: absolute;
-		top: 32px;
-		right: 20px;
+		top: -83px;
+		right: 0;
 
 		.icon{display: block;}
 	}
@@ -189,6 +198,8 @@
 			display: none;
 			&.active{display: block;}
 		}
+
+		&__close{right: 20px;}
 	}
 
 	.main-menu-choose{
@@ -248,5 +259,8 @@
 			width: 24px;
 			height: 24px;
 		}
+
+		&__popup{padding-top: 95px;}
+		&__close{top: -77px;}
 	}
 }

@@ -138,7 +138,7 @@ block body
 							.view__label Вид
 
 							.view__list
-								.view__item
+								.view__item.d-none.d-md-inline-flex
 									+svg('ic-random','ic-random', '16', '16')
 
 								.view__item.active
@@ -164,9 +164,12 @@ block body
 					each item in list
 						.col-6.col-md-3
 							.catalog-item
-								a(href="#").catalog-item__img-wrap
-									.catalog-item__img
+								.catalog-item__img-wrap
+									a(href="#").catalog-item__img
 										img(src="/upload/"+item.img, alt="")
+
+									.catalog-item__wish
+										+svg('ic-heart','ic-heart', '15', '13')
 
 								.catalog-item__content
 									.catalog-item__title

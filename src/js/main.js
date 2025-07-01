@@ -136,6 +136,7 @@ if(document.querySelector('.js-slider-sect-img')){
 		{
 			slidesPerView: 1,
 			modules: [Navigation],
+			allowTouchMove: false,
 			navigation: {
 				nextEl: ".js-slider-sect-next",
 				prevEl: ".js-slider-sect-prev",
@@ -216,18 +217,23 @@ var prodDetailSliderThumb = new Swiper('.js-prod-detail-thumb-slider', {
 	freeMode: true,
 	watchSlidesProgress: true,
 	direction: "vertical",
-	navigation: {
-		nextEl: ".js-prod-detail-thumb-slider-next",
-		prevEl: ".js-prod-detail-thumb-slider-prev",
-	},
+
+	// slidesPerView: "auto",
+	// centeredSlides: true,
+	autoScrollOffset: 1,
+
+	// navigation: {
+	// 	nextEl: ".js-prod-detail-thumb-slider-next",
+	// 	prevEl: ".js-prod-detail-thumb-slider-prev",
+	// },
 	breakpoints: {
 		992: {
-			slidesPerView: 4,
-			spaceBetween: 10,
+			slidesPerView: 9,
+			spaceBetween: 0,
 		},
 		768: {
 			slidesPerView: 3,
-			spaceBetween: 10,
+			spaceBetween: 0,
 		}
 	}
 	// loop: true,
@@ -298,7 +304,6 @@ if(document.querySelector('.js-main-menu-choose-item')){
 	document.querySelectorAll('.js-main-menu-choose-item').forEach((itemMenu) => {
 		itemMenu.addEventListener('click', () => {
 			let idMenu = itemMenu.getAttribute('data-id');
-			console.log('idMenu = ', idMenu);
 
 			showSectMenu(idMenu);
 		})
@@ -323,4 +328,28 @@ if(document.querySelector('.js-info-material-btn')){
 	document.querySelector('.js-info-material-btn').addEventListener("click", function(e){
 		document.querySelector('.js-info-material').classList.toggle('active');
 	});
+}
+
+//Меняем картинку при наведении на меню
+if(document.querySelector('.js-catalog-menu-link')){
+	document.querySelectorAll('.js-catalog-menu-link').forEach(function(itemMenu){
+		itemMenu.addEventListener('mouseover', () =>{
+			let idMenu = itemMenu.getAttribute('data-id');
+
+			hoverMenu(idMenu);
+		});
+	});
+
+	function hoverMenu(id) {
+		document.querySelectorAll('.js-catalog-menu-link').forEach(function(item){
+			item.classList.remove('active');
+		});
+	
+		document.querySelectorAll('.js-catalog-main-wrap-img').forEach(function(item){
+			item.classList.remove('active');
+		});
+	
+		document.querySelector('.js-catalog-menu-link[data-id="'+id+'"]').classList.add('active');
+		document.querySelector('.js-catalog-main-wrap-img[data-id="'+id+'"]').classList.add('active');
+	}
 }

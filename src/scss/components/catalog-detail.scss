@@ -1,5 +1,10 @@
 /*-------------- catalog-detail -----------------*/
 .catalog-detail{
+	&__info-wrap{
+		position: sticky;
+		top: 1px;
+	}
+
 	&__info{padding-top: 35px;}
 
 	&__price{
@@ -180,7 +185,7 @@
 
 	&__item_big{
 		width: calc(100% + 40px);
-		margin-left: -40px;
+		// margin-left: -40px;
 		margin-top: 87px;
 
 		&::after{
@@ -270,8 +275,11 @@
 	}
 }
 
+.detail-bar{display: none;}
+
 @media (max-width: 767px) {
 	.catalog-detail{
+		&__info-wrap{position: static;}
 		&__info{padding-top: 25px;}
 
 		&__info-top{
@@ -362,10 +370,7 @@
 			height: 16px;
 		}
 
-		.btn{
-			width: 100%;
-			max-width: 343px;
-		}
+		.btn{width: 100%;}
 	}
 
 	.history{
@@ -412,4 +417,26 @@
 	}
 
 	body .catalog-slider .swiper-pagination-bullet-active{background: var(--color-orange);}
+
+	.detail-bar{
+		display: block;
+		width: 100%;
+		border-radius: 24px 24px 0 0;
+		padding: 12px 16px;
+		background: #fff;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+
+		.catalog-detail-params{
+			justify-content: center;
+			margin-top: 0;
+		}
+
+		.btn{
+			width: 100%;
+			margin-top: 24px;
+		}
+	}
 }
