@@ -107,6 +107,20 @@
 			bottom: -100%;
 			left: 0;
 			transition: bottom 0.4s ease;
+
+			&::after{
+				content: '';
+				display: block;
+				width: 110px;
+				height: 4px;
+				background: #D3D0CB;
+				border-radius: 4px;
+				position: absolute;
+				top: 16px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
 		}
 
 		&_line.opened &__content{
@@ -120,6 +134,8 @@
 			position: absolute;
 			top: 16px;
 			right: 16px;
+
+			.icon{display: block;}
 		}
 
 		&__close-btn{
