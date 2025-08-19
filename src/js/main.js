@@ -271,7 +271,14 @@ document.querySelectorAll('.js-unwrap-block').forEach((accSection) => {
 		} else {
 			accBody.style.maxHeight = "0px";
 		}
-	})
+	});
+
+	accSection.querySelectorAll('.js-unwrap-block-close').forEach((btnClose) => {
+		btnClose.addEventListener('click', () => {
+			accSection.classList.remove("opened");
+			accBody.style.maxHeight = "0px";
+		});
+	});
 });
 
 // Маска для телефона

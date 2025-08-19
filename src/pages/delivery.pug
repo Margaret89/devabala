@@ -1,0 +1,136 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'delivery'
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'доставка и оплата'},
+		];
+
+block body
+	.page-top
+		.container
+			.row
+				.col-12
+					+breadcrumbs(breadcrumbs)
+
+	section.page-title
+		.container
+			.row
+				.col-12
+					.page-title__content
+						h1.page-title__text Доставка и&nbsp;оплата
+
+	section.delivery-info
+		.delivery-info__item
+			.container
+				.row
+					.col-lg-6
+						.delivery-info__title-wrap
+							.delivery-info__icon
+								+svg('ic-search','ic-search', '28', '30')
+
+							.delivery-info__title Выбор города
+
+					.col-lg-6
+						.search-city
+							.search-city__text Выберите свой город, чтобы узнать о стоимости и вариантах доставки.
+
+							.search-city__field
+								input(type="text", placeholder="Санкт-Петербург")
+
+		.delivery-info__item
+			.container
+				.row
+					.col-lg-6
+						.delivery-info__title-wrap
+							.delivery-info__icon
+								+svg('ic-delivery','ic-delivery', '30', '24')
+
+							.delivery-info__title Доставка
+
+					.col-lg-6
+						.unwrap-block.unwrap-block_line.js-unwrap-block
+							.unwrap-block__head.js-unwrap-head Курьер по санкт-петербургу
+								.unwrap-block__arr
+									+svg('ic-arr-down','ic-arr-down', '16', '9')
+							.unwrap-block__content.js-unwrap-content
+								.unwrap-block__info.js-unwrap-info
+									.unwrap-block__close.js-unwrap-block-close
+										+svg('ic-close','ic-close', '16', '16')
+
+									p Стоимость доставки без примерки — 290 ₽ Стоимость доставки с примеркой — 500 руб. (обратите внимание, чулочно-носочные изделия и белье примерке не подлежат)
+									p При заказе от 10000 руб. с оплатой на сайте или постоплатой доставка без примерки бесплатна.
+									p При отказе от покупки, стоимость доставки удерживается с покупателя.
+
+									ul
+										li Срок доставки 1-2 рабочих дня. 
+										li Время примерки - 15 минут. 
+										li Доставку с примеркой можно заказать в случае, если в заказе не более 5 позиций. 
+										li Доставка осуществляется с 9:00 до 22:00 (ПН-ПТ). 
+										li Курьер свяжется с вами за час до визита. 
+
+									p Стоимость возврата заказа, выкупленного после примерки — 500 ₽
+										br
+										|Доставка возможна на следующий рабочий день при оформлении заказа до 17:00, через 1 рабочий день при оформлении заказа после 17:00. 
+
+									p При заказе в пятницу после 17:00 отправка со склада будет осуществлена в понедельник. 
+
+									.unwrap-block__close-btn
+										span.btn.btn_border.js-unwrap-block-close Закрыть
+
+						-
+							var list=[
+								{title:'Доставка по россии'},
+								{title:'Выдача в постамате boxberry'},
+							]
+						each item in list
+							.unwrap-block.unwrap-block_line.js-unwrap-block
+								.unwrap-block__head.js-unwrap-head
+									=item.title
+									.unwrap-block__arr
+										+svg('ic-arr-down','ic-arr-down', '16', '9')
+
+								.unwrap-block__content.js-unwrap-content
+									.unwrap-block__info.js-unwrap-info
+										.unwrap-block__close.js-unwrap-block-close
+											+svg('ic-close','ic-close', '16', '16')
+
+										| Текст
+
+										.unwrap-block__close-btn
+											span.btn.btn_border.js-unwrap-block-close Закрыть
+
+		.delivery-info__item
+			.container
+				.row
+					.col-lg-6
+						.delivery-info__title-wrap
+							.delivery-info__icon
+								+svg('ic-bag','ic-bag', '20', '24')
+
+							.delivery-info__title Оплата
+
+					.col-lg-6
+						-
+							var list=[
+								{title:'Оплата картой на сайте'},
+								{title:'Оплата наличными или картами при получении'},
+							]
+						each item in list
+							.unwrap-block.unwrap-block_line.js-unwrap-block
+								.unwrap-block__head.js-unwrap-head
+									=item.title
+									.unwrap-block__arr
+										+svg('ic-arr-down','ic-arr-down', '16', '9')
+
+								.unwrap-block__content.js-unwrap-content
+									.unwrap-block__info.js-unwrap-info
+										.unwrap-block__close.js-unwrap-block-close
+											+svg('ic-close','ic-close', '16', '16')
+
+										| Текст
+
+										.unwrap-block__close-btn
+											span.btn.btn_border.js-unwrap-block-close Закрыть

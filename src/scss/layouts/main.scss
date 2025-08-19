@@ -132,11 +132,12 @@ h6,.h6{
 	&_small{font-size: 1.6rem;}
 }
 
-// ol, ul{
-// 	padding-left: 20px;
-// }
+ol, ul{
+	padding-left: 20px;
+	margin-bottom: 2rem;
+}
 
-// ul{
+// ul.list-dots{
 // 	list-style: none;
 // 	margin-bottom: 2rem;
 

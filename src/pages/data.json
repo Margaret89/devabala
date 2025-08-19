@@ -44,6 +44,10 @@
 			"href": "contacts.html",
 			"title":"Контакты"
 		},
+		"delivery":{
+			"href": "delivery.html",
+			"title":"Доставка и оплата"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

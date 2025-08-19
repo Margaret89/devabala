@@ -1,0 +1,52 @@
+/*-------------- search-city -----------------*/
+.search-city{
+	&__text{
+		font-size: 2.4rem;
+		font-weight: 800;
+		line-height: 1.25;
+		color: var(--color-black);
+		margin-bottom: 18px;
+	}
+
+	&__field{
+		input[type="text"],
+		input[type="search"]{
+			display: inline-flex;
+			align-items: center;
+			height: 5rem;
+			width: 100%;
+			font-family: var(--font-site);
+			@include font(normal, 800, 2rem, 1.2, var(--color-black));
+			text-transform: uppercase;
+			padding: 0 5px;
+			border-radius: 0;
+			border: 0;
+			border-bottom: 1px solid #A29C90;
+			outline: 0;
+			margin: 0;
+			background: transparent;
+			box-shadow: none;
+			transition: border-color 0.2s ease 0s;
+		}
+
+		input[type="text"]:focus,
+		input[type="search"]:focus{
+			border-color: var(--color-black);
+		}
+
+		input[type="text"]::placeholder,
+		input[type="search"]::placeholder{
+			color: #979797;
+			opacity: 1;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.search-city{
+		&__text{
+			font-size: 2rem;
+			line-height: 1.5;
+		}
+	}
+}
