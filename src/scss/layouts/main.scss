@@ -294,7 +294,10 @@ button.btn{
 .page-top{
 	margin-bottom: 4rem;
 
-	.breadcrumb{margin-top: 0;}
+	.breadcrumb{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
 .fancybox__container{--fancybox-bg: rgba(0, 0, 0, 0.6)!important;}

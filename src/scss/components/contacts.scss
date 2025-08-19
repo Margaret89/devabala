@@ -1,0 +1,47 @@
+/*-------------- contacts -----------------*/
+.contacts{
+	&__item:not(:last-child){margin-bottom: 120px;}
+
+	&__title{
+		font-family: var(--font-tenor);
+		font-size: 3.6rem;
+		line-height: 1.1;
+		color: var(--color-primary);
+		text-transform: uppercase;
+		letter-spacing: 1.21px;
+	}
+
+	&__info{
+		font-size: 2.4rem;
+		font-weight: 800;
+		line-height: 1.25;
+		color: var(--color-black);
+
+		p{margin-bottom: 1.6rem;}
+		p:last-child{margin-bottom: 0;}
+		p+.btn{margin-top: 30px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.contacts{
+		&__item:not(:last-child){margin-bottom: 80px;}
+	
+		&__title{
+			font-size: 2.4rem;
+			line-height: 1.16;
+			margin-bottom: 16px;
+		}
+	
+		&__info{
+			font-size: 2rem;
+			line-height: 1.5;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.contacts{
+		&__item:not(:last-child){margin-bottom: 60px;}
+	}
+}

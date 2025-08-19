@@ -40,6 +40,10 @@
 			"href": "checkout-success.html",
 			"title":"Корзина (попап)"
 		},
+		"contacts":{
+			"href": "contacts.html",
+			"title":"Контакты"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

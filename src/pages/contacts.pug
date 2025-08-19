@@ -1,0 +1,75 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'contacts'
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Контакты'},
+		];
+
+block body
+	.page-top
+		.container
+			.row
+				.col-12
+					+breadcrumbs(breadcrumbs)
+
+	section.page-title.page-title_dark(style="background-image: url(/upload/bg-contacts.jpg)")
+		.container
+			.row
+				.col-12
+					.page-title__content
+						h1.page-title__text Контакты
+
+	section.contacts
+		.contacts__item
+			.container
+				.row
+					.col-lg-6
+						.contacts__title интернет-магазин
+
+					.col-lg-6
+						.contacts__info
+							p Телефон: 
+								a(href="tel:+74554305523") +7 (455) 430-55-23
+
+							p Режим работы: пн-вс с 9:00 до 21:00
+
+							p Email: 
+								a(href="mailto:support@devabala.ru") support@devabala.ru
+
+							a(href="#").btn.btn_border связаться через What’s app
+
+		.contacts__item
+			.container
+				.row
+					.col-lg-6
+						.contacts__title реквизиты компании
+
+					.col-lg-6
+						.contacts__info
+							p
+								|Наименование компании:
+								br
+								|ООО "Дэвабала"
+
+							p Юр.адрес организации: 1090444, г. Санкт-Петербург, ул. Чернышевского, д. 21 стр. 1.
+
+							p
+								|ИНН 5074069895
+								br
+								|КПП 770901001
+								br
+								|ОГРН 1215000059560
+
+		.contacts__item
+			.container
+				.row
+					.col-lg-6
+						.contacts__title вакансии
+
+					.col-lg-6
+						.contacts__info
+							a(href="mailto:hr@devabala.ru") hr@devabala.ru
+							| - по вопросам об актуальных вакансиях и резюме
