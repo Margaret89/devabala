@@ -360,3 +360,17 @@ if(document.querySelector('.js-catalog-menu-link')){
 		document.querySelector('.js-catalog-main-wrap-img[data-id="'+id+'"]').classList.add('active');
 	}
 }
+
+//Открыть попап с поиском
+if(document.querySelector('.js-search-popup-open')){
+	document.querySelector('.js-search-popup-open').addEventListener("click", function(e){
+		document.querySelector('.js-search-popup').classList.add('opened');
+	});
+}
+
+//Закрыть попап с поиском
+if(document.querySelector('.js-search-popup-close')){
+	document.querySelector('.js-search-popup-close').addEventListener("click", function(e){
+		document.querySelector('.js-search-popup').classList.remove('opened');
+	});
+}

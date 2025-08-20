@@ -98,7 +98,7 @@ header.header.js-header(class=headerLight?'header_light':'')
 
 			.col-4
 				.header-actions
-					.header-actions__item
+					.header-actions__item.js-search-popup-open
 						+svg('ic-search','ic-search', '26', '30')
 
 					.header-actions__item
@@ -106,3 +106,140 @@ header.header.js-header(class=headerLight?'header_light':'')
 
 						if(cartCount)
 							.header-actions__count= cartCount
+
+	.search-popup.js-search-popup(class=searchShow?'opened':'')
+		.container
+			.row
+				.col-12
+					.search-popup__header Поиск
+
+					.search-popup__top
+						.search-popup__field
+							.search-popup__icon
+								+svg('ic-search','ic-search', '37', '39')
+
+							if(searchText || searchEmpty)
+								input(type="text", placeholder="Введите запрос", value="Топы")
+							else
+								input(type="text", placeholder="Введите запрос")
+
+							button(type="submit").btn Найти
+								+svg('ic-search','ic-search', '22', '24')
+
+						.search-popup__close.js-search-popup-close
+							+svg('ic-close','ic-close', '24', '24')
+
+					.search-tags
+						-
+							var list=[
+								{text:'брюки'},
+								{text:'рубашка'},
+								{text:'платье'},
+								{text:'топ'},
+								{text:'новинки'},
+								{text:'офис'},
+							]
+						each item in list
+							.search-tags__item= item.text
+
+					.search-popup__main
+						.search-popup__info
+							if(searchText)
+								.search-popup__sect
+									.search-popup__title Искать в категории
+
+									.search-popup-res
+										-
+											var list=[
+												{text:'Топы и блузки'},
+												{text:'Офисная коллекция'},
+												{text:'Новинки'},
+											]
+										each item in list
+											a(href="#").search-popup-res__item= item.text
+
+									a(href="#").btn.btn_brown.btn_medium.d-md-inline-flex.d-none Посмотреть все результаты
+
+							else if(searchEmpty)
+								.search-popup__sect
+									.search-popup__title 0 результатов
+
+									.search-popup__empty Товаров по вашему запросу не найдено
+
+								.search-popup__sect
+									.search-popup__title Попробуйте другие категории
+
+									.search-category
+										-
+											var list=[
+												{img:'search-category1.png', text:'Платья и сарафаны'},
+												{img:'search-category2.png', text:'Жакеты'},
+												{img:'search-category2.png', text:'Жакеты'},
+												{img:'search-category1.png', text:'Топы'},
+											]
+										each item in list
+											.search-category__item
+												.search-category__title= item.text
+
+												.search-category__img
+													img(src="/upload/"+item.img, alt="")
+							else
+								.search-popup__sect
+									.search-popup__title Недавние запросы
+
+									.list-requests
+										-
+											var list=[
+												{text:'Миди'},
+												{text:'Брюки'},
+												{text:'Платья'},
+											]
+										each item in list
+											.list-requests__item
+												.list-requests__val= item.text
+
+												.list-requests__close
+													+svg('ic-close','ic-close', '12', '12')
+
+								.search-popup__sect
+									.search-popup__title Категории
+
+									.search-category
+										-
+											var list=[
+												{img:'search-category1.png', text:'Платья и сарафаны'},
+												{img:'search-category2.png', text:'Жакеты'},
+												{img:'search-category2.png', text:'Жакеты'},
+												{img:'search-category1.png', text:'Топы'},
+											]
+										each item in list
+											.search-category__item
+												.search-category__title= item.text
+
+												.search-category__img
+													img(src="/upload/"+item.img, alt="")
+
+						.search-popup__products
+							.search-popup__title Популярные товары
+
+							.popular-products
+								-
+									var list=[
+										{img:'catalog2.jpg', text:'Бархатный топ', price:'9 000'},
+										{img:'catalog3.jpg', text:'Бархатный топ', price:'23 000'},
+										{img:'catalog4.jpg', text:'Бархатный топ', price:'12 000'},
+									]
+								each item in list
+										.catalog-item
+											.catalog-item__img-wrap
+												a(href="#").catalog-item__img
+													img(src="/upload/"+item.img, alt="")
+
+												.catalog-item__wish
+													+svg('ic-heart','ic-heart', '15', '13')
+
+											.catalog-item__content
+												.catalog-item__title
+													a(href="#")= item.text
+
+												.catalog-item__price= item.price

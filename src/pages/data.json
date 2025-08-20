@@ -52,6 +52,18 @@
 			"href": "delivery.html",
 			"title":"Доставка и оплата"
 		},
+		"search-popup":{
+			"href": "search-popup.html",
+			"title":"Поиск (попап)"
+		},
+		"search-popup-text":{
+			"href": "search-popup-text.html",
+			"title":"Поиск с введенным текстом (попап)"
+		},
+		"search-popup-empty":{
+			"href": "search-popup-empty.html",
+			"title":"Поиск с пустым результатом (попап)"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",
