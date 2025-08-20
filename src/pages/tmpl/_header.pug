@@ -103,3 +103,6 @@ header.header.js-header(class=headerLight?'header_light':'')
 
 					.header-actions__item
 						+svg('ic-bag','ic-bag', '26', '32')
+
+						if(cartCount)
+							.header-actions__count= cartCount

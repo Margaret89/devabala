@@ -20,6 +20,10 @@
 			"href": "catalog-detail.html",
 			"title":"Каталог детальная"
 		},
+		"catalog-detail-popup":{
+			"href": "catalog-detail-popup.html",
+			"title":"Каталог детальная (добавлен в корзину)"
+		},
 		"checkout":{
 			"href": "checkout.html",
 			"title":"Корзина"
