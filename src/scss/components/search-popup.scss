@@ -249,10 +249,7 @@
 
 @media (min-width: 768px) {
 	.search-popup{
-		&__header,
-		&__close{
-			display: none;
-		}
+		&__header{display: none;}
 	}
 }
 

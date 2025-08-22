@@ -374,3 +374,19 @@ if(document.querySelector('.js-search-popup-close')){
 		document.querySelector('.js-search-popup').classList.remove('opened');
 	});
 }
+
+//Открыть попап с поискоминформацией о товаре
+if(document.querySelector('.js-info-product-popup-open')){
+	document.querySelector('.js-info-product-popup-open').addEventListener("click", function(e){
+		document.querySelector('.js-info-product-popup').classList.add('opened');
+	});
+}
+
+//Закрыть попап с поискоминформацией о товаре
+if(document.querySelector('.js-info-product-popup-close')){
+	document.querySelectorAll('.js-info-product-popup-close').forEach(function(btnClose){
+		btnClose.addEventListener("click", function(e){
+			document.querySelector('.js-info-product-popup').classList.remove('opened');
+		});
+	});
+}

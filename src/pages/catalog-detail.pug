@@ -91,7 +91,7 @@ block body
 							.detail-slider-info__scale
 								+svg('ic-resize','ic-resize', '18', '18')
 
-							a(href="#").btn.btn_opacity.btn_small с чем носить?
+							span.btn.btn_opacity.btn_small.js-info-product-popup-open с чем носить?
 
 				.col-md-6.catalog-detail__info-wrap
 					.catalog-detail__info
@@ -271,3 +271,26 @@ block body
 		a(href="#").btn
 			+svg('ic-plus','ic-plus', '18', '18')
 			| добавить в корзину
+
+	.info-product-popup.js-info-product-popup
+		.info-product-popup__wrap
+			.info-product-popup__top
+				.info-product-popup__title Состав и уход
+
+				.info-product-popup__close.js-info-product-popup-close
+					+svg('ic-close','ic-close', '16', '16')
+
+			.info-product-popup__main
+				.info-product-popup__content
+					p 100% Шерсть. Нижнее платье: 100% Шелк
+					ul
+						li Стирка запрещена
+						li Отбеливание запрещено
+						li Барабанная сушка запрещена
+						li Утюжьте при температуре до 110 °C
+						li Профессиональная сухая чистка с углеводородами
+						
+					p Берегите от контакта с острыми и грубыми предметами, которые могут оставить затяжки и пилли
+
+				.info-product-popup__btn
+					span.btn.btn_border.js-info-product-popup-close Закрыть
